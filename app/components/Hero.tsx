@@ -52,7 +52,7 @@ export const Hero = () => {
 
           {/* Name */}
           <h1 className="text-5xl md:text-7xl font-bold text-slate-900 dark:text-white mb-6">
-            John Doe
+            Dibyan Maharjan
           </h1>
 
           {/* Animated Role */}

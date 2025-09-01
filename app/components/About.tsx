@@ -56,7 +56,7 @@ export const About = () => {
                 Frontend Architecture Expert
               </h3>
               <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
-                With over 8 years of experience in frontend development, I specialize in building
+                With over 6 years of experience in frontend development, I specialize in building
                 scalable, high-performance web applications. My expertise lies in React ecosystem,
                 Next.js, TypeScript, and modern CSS frameworks.
               </p>

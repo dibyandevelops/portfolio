@@ -43,34 +43,32 @@ export const Contact = () => {
     {
       icon: '📧',
       title: 'Email',
-      value: 'john.doe@example.com',
-      link: 'mailto:john.doe@example.com'
+      value: 'dibyn7@gmail.com',
+      link: 'mailto:dibyn7@gmail.com'
     },
     {
       icon: '📱',
       title: 'Phone',
-      value: '+1 (555) 123-4567',
-      link: 'tel:+15551234567'
+      value: '+977 (984) 133-8488',
+      link: 'tel:+9779841338488'
     },
     {
       icon: '📍',
       title: 'Location',
-      value: 'San Francisco, CA',
+      value: 'Kathmandu, NP',
       link: '#'
     },
     {
       icon: '💼',
       title: 'LinkedIn',
-      value: 'linkedin.com/in/johndoe',
-      link: 'https://linkedin.com/in/johndoe'
+      value: 'linkedin.com/in/dibyn7',
+      link: 'https://linkedin.com/in/dibyn7'
     }
   ];
 
   const socialLinks = [
-    { name: 'GitHub', icon: '🐙', url: 'https://github.com/johndoe' },
-    { name: 'Twitter', icon: '🐦', url: 'https://twitter.com/johndoe' },
-    { name: 'LinkedIn', icon: '💼', url: 'https://linkedin.com/in/johndoe' },
-    { name: 'Dribbble', icon: '🏀', url: 'https://dribbble.com/johndoe' }
+    { name: 'GitHub', icon: '🐙', url: 'https://github.com/dibyn' },
+    { name: 'LinkedIn', icon: '💼', url: 'https://linkedin.com/in/dibyn7' },
   ];
 
   return (
