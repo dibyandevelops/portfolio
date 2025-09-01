@@ -94,7 +94,7 @@ export const Hero = () => {
           {/* Stats */}
           <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-2xl mx-auto">
             <div className="text-center">
-              <div className="text-3xl font-bold text-blue-600 dark:text-blue-400">8+</div>
+              <div className="text-3xl font-bold text-blue-600 dark:text-blue-400">6+</div>
               <div className="text-slate-600 dark:text-slate-400">Years Experience</div>
             </div>
             <div className="text-center">

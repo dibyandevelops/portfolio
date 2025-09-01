@@ -31,7 +31,7 @@ export const About = () => {
             {/* Quick Facts */}
             <div className="grid grid-cols-2 gap-4">
               <div className="text-center p-4 bg-slate-50 dark:bg-slate-800 rounded-lg">
-                <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">8+</div>
+                <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">6+</div>
                 <div className="text-sm text-slate-600 dark:text-slate-400">Years Experience</div>
               </div>
               <div className="text-center p-4 bg-slate-50 dark:bg-slate-800 rounded-lg">
