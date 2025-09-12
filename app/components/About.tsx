@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export const About = () => {
   return (
     <section id="about" className="py-20 bg-white dark:bg-slate-900">
@@ -17,13 +19,8 @@ export const About = () => {
             {/* Profile Image */}
             <div className="relative">
               <div className="w-80 h-80 mx-auto lg:mx-0 rounded-2xl bg-gradient-to-br from-blue-400 to-purple-600 p-1">
-                <div className="w-full h-full rounded-2xl bg-slate-200 dark:bg-slate-800 flex items-center justify-center">
-                  <div className="text-center text-slate-500 dark:text-slate-400">
-                    <svg className="w-32 h-32 mx-auto mb-4" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z"/>
-                    </svg>
-                    <p className="text-sm">Profile Image</p>
-                  </div>
+                <div className="w-full h-full rounded-2xl bg-white flex items-center justify-center">
+                  <Image alt="profile-pic" width={305} height={305} className="rounded-2xl" src={"/DIBYAN_PP_PHOTO-removebg.jpg"} />
                 </div>
               </div>
             </div>
