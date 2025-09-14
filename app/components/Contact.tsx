@@ -23,34 +23,33 @@ export const Contact = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000));
-
+    const { subject, message } = formData;
+    const mailtoLink = `mailto:dibyan.softwaredev@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
+    // redirect to new tab
+    window.open(mailtoLink, '_blank');
     // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      subject: '',
-      message: ''
-    });
+    // setFormData({
+    //   name: '',
+    //   email: '',
+    //   subject: '',
+    //   message: ''
+    // });
 
-    setIsSubmitting(false);
-    alert('Thank you for your message! I\'ll get back to you soon.');
+    // setIsSubmitting(false);
   };
 
   const contactInfo = [
     {
       icon: '📧',
       title: 'Email',
-      value: 'dibyn7@gmail.com',
-      link: 'mailto:dibyn7@gmail.com'
+      value: 'dibyan.softwaredev@gmail.com',
+      link: 'mailto:dibyan.softwaredev@gmail.com'
     },
     {
       icon: '📱',
       title: 'Phone',
-      value: '+977 (984) 133-8488',
-      link: 'tel:+9779841338488'
+      value: '+977 (981) 026-5305',
+      link: 'tel:+9779810265305'
     },
     {
       icon: '📍',
@@ -61,14 +60,14 @@ export const Contact = () => {
     {
       icon: '💼',
       title: 'LinkedIn',
-      value: 'linkedin.com/in/dibyn7',
-      link: 'https://linkedin.com/in/dibyn7'
+      value: 'linkedin.com/in/dibyansoftwaredev',
+      link: 'https://linkedin.com/in/dibyansoftwaredev'
     }
   ];
 
   const socialLinks = [
-    { name: 'GitHub', icon: '🐙', url: 'https://github.com/dibyn' },
-    { name: 'LinkedIn', icon: '💼', url: 'https://linkedin.com/in/dibyn7' },
+    { name: 'GitHub', icon: '🐙', url: 'https://github.com/dibyandevelops' },
+    { name: 'LinkedIn', icon: '💼', url: 'https://linkedin.com/in/dibyansoftwaredev' },
   ];
 
   return (
@@ -244,7 +243,9 @@ export const Contact = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="mailto:john.doe@example.com"
+                rel='noreferrer noopener'
+                target='_blank'
+                href="https://calendly.com/dibyan/30min"
                 className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
               >
                 Schedule a Call

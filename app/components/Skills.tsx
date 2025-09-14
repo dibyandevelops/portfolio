@@ -126,7 +126,7 @@ export const Skills = () => {
         </div>
 
         {/* Additional Info */}
-        <div className="mt-16 text-center">
+        {/* <div className="mt-16 text-center">
           <div className="bg-white dark:bg-slate-700 rounded-2xl p-8 shadow-lg max-w-4xl mx-auto">
             <h3 className="text-2xl font-semibold text-slate-900 dark:text-white mb-4">
               Continuous Learning & Growth
@@ -146,7 +146,7 @@ export const Skills = () => {
               ))}
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
