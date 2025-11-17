@@ -8,8 +8,8 @@ jest.mock('next/navigation', () => ({
 // Next.js Image can be treated as a simple img in tests
 jest.mock('next/image', () => ({
   __esModule: true,
-  default: (props: any) => {
-    // eslint-disable-next-line @next/next/no-img-element
-    return <img {...props} />;
-  },
+  // default: (props: any) => {
+  //   // eslint-disable-next-line @next/next/no-img-element
+  //   return <img {...props} />;
+  // },
 }));
