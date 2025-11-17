@@ -107,7 +107,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="projects" className="section-shell space-y-8">
+      {/* <section id="projects" className="section-shell space-y-8">
         <p className="section-heading">Selected work</p>
         <div className="grid gap-6 md:grid-cols-2">
           {featuredProjects.map((project) => (
@@ -136,7 +136,7 @@ export default function Home() {
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
 
       <section id="writing" className="section-shell space-y-8">
         <p className="section-heading">Writing</p>
