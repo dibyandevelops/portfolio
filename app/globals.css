@@ -1,87 +1,135 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --sand: #f6f1e6;
+  --ink: #1f1b15;
+  --muted: #6c6359;
+  --stroke: #ded7c8;
+  --accent: #b9772c;
+  --shadow: 0 25px 55px rgba(20, 15, 10, 0.08);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
-}
-
-/* Custom utilities */
-.bg-grid-pattern {
-  background-image:
-    linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
-  background-size: 50px 50px;
-}
-
-.line-clamp-3 {
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
 
-/* Custom animations */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+body {
+  background: var(--sand);
+  color: var(--ink);
+  font-family: var(--font-geist-sans), "Inter", "Helvetica Neue", Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 0;
+  min-height: 100vh;
+  letter-spacing: -0.01em;
 }
 
-.animate-fade-in-up {
-  animation: fadeInUp 0.6s ease-out;
+::selection {
+  background: var(--ink);
+  color: var(--sand);
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 
-::-webkit-scrollbar-track {
-  background: #f1f5f9;
+a:focus-visible {
+  outline: 2px dashed var(--accent);
+  outline-offset: 4px;
 }
 
-::-webkit-scrollbar-thumb {
-  background: #3b82f6;
-  border-radius: 4px;
+.nav-shell {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #2563eb;
+.nav-shell a {
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid transparent;
 }
 
-/* Dark mode scrollbar */
-@media (prefers-color-scheme: dark) {
-  ::-webkit-scrollbar-track {
-    background: #1e293b;
-  }
+.nav-shell a:hover {
+  color: var(--ink);
+  border-color: var(--ink);
+}
+
+.section-shell {
+  width: 100%;
+  max-width: 1200px;
+  padding: 4.5rem clamp(1.5rem, 4vw, 3rem);
+  margin: 0 auto;
+}
+
+.section-heading {
+  font-size: clamp(1.5rem, 2vw, 2.2rem);
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+}
+
+.surface-card {
+  background: #fffdf8;
+  border: 1px solid var(--stroke);
+  border-radius: 24px;
+  padding: 1.75rem;
+  box-shadow: var(--shadow);
+}
+
+.surface-card.is-quiet {
+  background: transparent;
+  box-shadow: none;
+}
+
+.tag-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  background: #efe7d7;
+  color: #4c4333;
+}
+
+.list-reset {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.pill-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--stroke);
+  font-size: 1rem;
+}
+
+.pill-link span:last-child {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.mono-label {
+  font-family: var(--font-geist-mono), "IBM Plex Mono", monospace;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.inline-link {
+  border-bottom: 1px solid var(--ink);
+}
+
+.inline-link:hover {
+  color: var(--accent);
+  border-color: var(--accent);
 }
