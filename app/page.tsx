@@ -1,6 +1,13 @@
 import Link from "next/link";
 
-const techStack = ["React & Next.js", "TypeScript", "Claude AI", "Cursor IDE", "GitHub Copilot"];
+const techStack = [
+  "React & Next.js",
+  "TypeScript",
+  "OpenAI Codex",
+  "Google Gemini",
+  "Claude",
+  "GitHub Copilot",
+];
 
 const stats = [
   { number: "30,000+", label: "Monthly Users Served" },
@@ -132,7 +139,8 @@ export default function HomePage() {
           </h1>
           <p className="mx-auto max-w-3xl text-pretty text-base text-[var(--muted)] sm:text-lg">
             Senior Frontend Engineer specializing in React/Next.js and AI automation. I help SaaS teams
-            integrate Claude and GPT workflows and ship production-ready code in days, not weeks.
+            integrate Codex, Gemini, Claude, and GPT workflows and ship production-ready code in days,
+            not weeks.
           </p>
         </div>
 
