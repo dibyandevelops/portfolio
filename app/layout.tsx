@@ -32,6 +32,11 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://www.dibyan.com.np",
   },
+  icons: {
+    icon: "/dm-icon.svg",
+    shortcut: "/dm-icon.svg",
+    apple: "/dm-icon.svg",
+  },
   metadataBase: new URL("https://www.dibyan.com.np"),
 };
 

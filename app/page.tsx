@@ -14,28 +14,28 @@ const services = [
     description:
       "Production-ready React/Next.js dashboards with real-time data visualizations, delivered in 1-2 weeks using AI-accelerated workflows.",
     perfectFor: "SaaS platforms, analytics tools, internal dashboards",
-    price: "From $5,000 | 1-2 week delivery",
+    price: "From NPR 90,000 | 3-5 week delivery",
   },
   {
     title: "Frontend AI Integration",
     description:
       "Integrate Claude/GPT-4 into your React applications for chat interfaces, AI-powered search, and intelligent features.",
     perfectFor: "B2B SaaS, enterprise apps, developer tools",
-    price: "From $10,000 | 3-4 week delivery",
+    price: "From NPR 175,000 | 5-8 week delivery",
   },
   {
     title: "Figma to React Conversion",
     description:
       "Convert your Figma designs to production-grade React/Next.js code using AI assistance. 10x faster than manual conversion.",
     perfectFor: "Design agencies, startups, rebrand projects",
-    price: "From $3,000 | 3-5 day delivery",
+    price: "From NPR 60,000 | 2-3 week delivery",
   },
   {
     title: "Performance Optimization",
     description:
       "Audit and optimize your React/Next.js apps for Core Web Vitals, SEO, and conversion improvements.",
     perfectFor: "Slow websites, pre-fundraise tech diligence",
-    price: "From $3,000 | 1 week delivery",
+    price: "From NPR 45,000 | 2-4 week delivery",
   },
 ];
 
@@ -98,173 +98,179 @@ const accelerationPoints = [
 
 export default function HomePage() {
   return (
-    <main className="ai-page">
-      <header className="ai-header">
-        <div className="ai-container ai-header-content">
-          <div className="ai-logo">Dibyan Maharjan</div>
-          <div className="ai-header-actions">
-            <Link href="/resume" className="ai-outline-link">
-              View Resume
+    <main className="bg-[var(--sand)] text-[var(--ink)]">
+      <header className="sticky top-0 z-50 border-b border-[var(--stroke)] bg-[var(--sand)]/95 backdrop-blur">
+        <div className="mx-auto flex w-full max-w-[1200px] items-center justify-between gap-3 px-4 py-4 sm:px-6 lg:px-10">
+          <div className="flex items-center gap-2.5">
+            <span className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-[var(--stroke)] bg-[#fffdf8] text-xs font-bold tracking-[0.08em] text-[var(--ink)]">
+              DM
+            </span>
+            <p className="text-sm font-semibold tracking-tight">Dibyan Maharjan</p>
+          </div>
+          <div className="flex items-center gap-2 sm:gap-3">
+            <Link
+              href="/resume"
+              className="rounded-full border border-[var(--stroke)] px-3 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--muted)] transition hover:border-[var(--ink)] hover:text-[var(--ink)] sm:px-4"
+            >
+              Resume
             </Link>
-            <a href="mailto:dibyan.softwaredev@gmail.com" className="ai-cta-button">
+            <a
+              href="mailto:dibyan.softwaredev@gmail.com"
+              className="rounded-full bg-[var(--ink)] px-3 py-2 text-xs font-semibold uppercase tracking-[0.16em] !text-white visited:!text-white hover:!text-white focus:!text-white active:!text-white transition hover:bg-[#111111] sm:px-4"
+            >
               Get in Touch
             </a>
           </div>
         </div>
       </header>
 
-      <section className="ai-hero">
-        <div className="ai-container">
-          <h1>
-            Build Dashboards 10x Faster
-            <br />
-            with AI-Accelerated Development
+      <section className="mx-auto w-full max-w-[1200px] px-4 pb-12 pt-12 sm:px-6 sm:pt-16 lg:px-10 lg:pt-20">
+        <div className="space-y-6 text-center">
+          <p className="mono-label">AI-accelerated frontend engineering</p>
+          <h1 className="mx-auto max-w-4xl text-balance text-3xl font-semibold leading-tight tracking-[-0.04em] sm:text-4xl lg:text-6xl">
+            Build Dashboards 10x Faster with AI-Accelerated Development
           </h1>
-          <p className="ai-subtitle">
-            Senior Frontend Engineer specializing in React/Next.js and AI automation. I help SaaS
-            companies integrate Claude and GPT-4 and deliver production-ready code in days, not weeks.
+          <p className="mx-auto max-w-3xl text-pretty text-base text-[var(--muted)] sm:text-lg">
+            Senior Frontend Engineer specializing in React/Next.js and AI automation. I help SaaS teams
+            integrate Claude and GPT workflows and ship production-ready code in days, not weeks.
           </p>
-          <div className="ai-tech-stack">
-            {techStack.map((tech) => (
-              <span key={tech} className="ai-tech-badge">
-                {tech}
-              </span>
-            ))}
-          </div>
-          <div className="ai-stats">
-            {stats.map((stat) => (
-              <div key={stat.label} className="ai-stat">
-                <div className="ai-stat-number">{stat.number}</div>
-                <div className="ai-stat-label">{stat.label}</div>
-              </div>
-            ))}
-          </div>
+        </div>
+
+        <div className="mt-8 flex flex-wrap justify-center gap-2 sm:mt-10 sm:gap-3">
+          {techStack.map((tech) => (
+            <span
+              key={tech}
+              className="rounded-full border border-[var(--stroke)] bg-[#fffdf8] px-3 py-1.5 text-xs font-medium text-[var(--muted)] sm:text-sm"
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
+
+        <div className="mt-8 grid grid-cols-1 gap-3 sm:mt-12 sm:grid-cols-3 sm:gap-4">
+          {stats.map((stat) => (
+            <div key={stat.label} className="surface-card text-center sm:text-left">
+              <p className="text-3xl font-semibold tracking-tight text-[var(--ink)]">{stat.number}</p>
+              <p className="mono-label mt-1">{stat.label}</p>
+            </div>
+          ))}
         </div>
       </section>
 
-      <section className="ai-section ai-section-alt">
-        <div className="ai-container">
-          <h2 className="ai-section-title">Services</h2>
-          <div className="ai-services-grid">
+      <section className="border-y border-[var(--stroke)] bg-[#efe7d7]/35">
+        <div className="mx-auto w-full max-w-[1200px] px-4 py-12 sm:px-6 sm:py-16 lg:px-10">
+          <p className="section-heading">Services</p>
+          <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4">
             {services.map((service) => (
-              <article key={service.title} className="ai-service-card">
-                <h3>{service.title}</h3>
-                <p>{service.description}</p>
-                <p>
-                  <strong>Perfect for:</strong> {service.perfectFor}
+              <article key={service.title} className="surface-card h-full space-y-3">
+                <h3 className="text-xl font-semibold tracking-tight">{service.title}</h3>
+                <p className="text-sm text-[var(--muted)] sm:text-base">{service.description}</p>
+                <p className="text-sm text-[var(--muted)]">
+                  <strong className="text-[var(--ink)]">Perfect for:</strong> {service.perfectFor}
                 </p>
-                <div className="ai-price">{service.price}</div>
+                <p className="pt-2 text-sm font-semibold uppercase tracking-[0.14em] text-[var(--accent)]">
+                  {service.price}
+                </p>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="ai-section">
-        <div className="ai-container">
-          <h2 className="ai-section-title">Case Studies</h2>
-          <div className="ai-case-studies">
-            {caseStudies.map((study) => (
-              <article key={study.title} className="ai-case-study">
-                <div className="ai-case-study-header">
-                  <h3>{study.title}</h3>
-                  <p>{study.subtitle}</p>
+      <section className="mx-auto w-full max-w-[1200px] px-4 py-12 sm:px-6 sm:py-16 lg:px-10">
+        <p className="section-heading">Case Studies</p>
+        <div className="mt-6 grid grid-cols-1 gap-5 lg:grid-cols-3">
+          {caseStudies.map((study) => (
+            <article key={study.title} className="overflow-hidden rounded-[24px] border border-[var(--stroke)] bg-[#fffdf8] shadow-[var(--shadow)]">
+              <div className="bg-[var(--ink)] p-5 text-[var(--sand)]">
+                <h3 className="text-xl font-semibold tracking-tight">{study.title}</h3>
+                <p className="mt-1 text-sm text-[var(--sand)]/80">{study.subtitle}</p>
+              </div>
+              <div className="space-y-4 p-5">
+                <ul className="space-y-2 text-sm text-[var(--muted)]">
+                  {study.results.map((result) => (
+                    <li key={result} className="flex items-start gap-2">
+                      <span className="mt-0.5 text-[#2f855a]">✓</span>
+                      <span>{result}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="flex flex-wrap gap-2">
+                  {study.tech.map((tech) => (
+                    <span
+                      key={tech}
+                      className="rounded-full border border-[var(--stroke)] bg-[#efe7d7] px-2.5 py-1 text-xs text-[#4c4333]"
+                    >
+                      {tech}
+                    </span>
+                  ))}
                 </div>
-                <div className="ai-case-study-body">
-                  <div className="ai-case-study-results">
-                    {study.results.map((result) => (
-                      <div key={result} className="ai-result-item">
-                        {result}
-                      </div>
-                    ))}
-                  </div>
-                  <div className="ai-tech-list">
-                    {study.tech.map((tech) => (
-                      <span key={tech} className="ai-tech-tag">
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
+              </div>
+            </article>
+          ))}
         </div>
       </section>
 
-      <section className="ai-section ai-section-alt">
-        <div className="ai-container ai-narrow">
-          <h2 className="ai-section-title">How AI Accelerates Development</h2>
-          <p className="ai-section-intro">
-            I use AI tools like Claude, Cursor, and GitHub Copilot to deliver production-ready code
-            faster without compromising quality.
+      <section className="border-y border-[var(--stroke)] bg-[#fffdf8]">
+        <div className="mx-auto w-full max-w-[1000px] px-4 py-12 sm:px-6 sm:py-16 lg:px-10">
+          <p className="section-heading text-center">How AI Accelerates Development</p>
+          <p className="mx-auto mt-4 max-w-2xl text-center text-sm text-[var(--muted)] sm:text-base">
+            I use Claude, Cursor, and Copilot to move faster while keeping engineering quality high.
           </p>
 
-          <div className="ai-acceleration-grid">
+          <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-3">
             {accelerationPoints.map((point) => (
-              <article key={point.title} className="ai-acceleration-item">
-                <div className="ai-icon" aria-hidden="true">
+              <article key={point.title} className="surface-card text-center">
+                <p className="text-4xl" aria-hidden="true">
                   {point.icon}
-                </div>
-                <h3>{point.title}</h3>
-                <p>{point.description}</p>
+                </p>
+                <h3 className="mt-2 text-lg font-semibold">{point.title}</h3>
+                <p className="mt-2 text-sm text-[var(--muted)]">{point.description}</p>
               </article>
             ))}
           </div>
 
-          <div className="ai-comparison-card">
-            <p className="ai-comparison-title">Traditional Development vs. AI-Accelerated</p>
-            <div className="ai-comparison-grid">
+          <div className="surface-card mt-6 border-2 border-[var(--accent)] text-center">
+            <p className="text-lg font-semibold tracking-tight">Traditional vs. AI-Accelerated Delivery</p>
+            <div className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2">
               <div>
-                <div className="ai-comparison-label">Dashboard Project</div>
-                <div className="ai-comparison-number">2-3 weeks</div>
-                <div className="ai-comparison-subtext">Manual coding</div>
+                <p className="text-sm text-[var(--muted)]">Dashboard Project</p>
+                <p className="text-2xl font-semibold">2-3 weeks</p>
+                <p className="text-sm text-[var(--muted)]">Manual coding</p>
               </div>
               <div>
-                <div className="ai-comparison-label">With AI Acceleration</div>
-                <div className="ai-comparison-number ai-primary">1-2 days</div>
-                <div className="ai-comparison-subtext">Same quality, 70% less time</div>
+                <p className="text-sm text-[var(--muted)]">With AI Acceleration</p>
+                <p className="text-2xl font-semibold text-[var(--accent)]">1-2 days</p>
+                <p className="text-sm text-[var(--muted)]">Same quality, 70% less time</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="ai-contact-section">
-        <div className="ai-container">
-          <h2>Ready to Build Faster?</h2>
-          <p>
-            Let&apos;s discuss your project. I&apos;m currently available for consulting engagements.
-          </p>
-          <a
-            href="mailto:dibyan.softwaredev@gmail.com?subject=Consulting Inquiry"
-            className="ai-contact-button"
-          >
-            Email Me: dibyan.softwaredev@gmail.com
+      <section className="mx-auto w-full max-w-[1200px] px-4 py-12 text-center sm:px-6 sm:py-16 lg:px-10">
+        <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">Ready to Build Faster?</h2>
+        <p className="mx-auto mt-3 max-w-xl text-base text-[var(--muted)] sm:text-lg">
+          Let&apos;s discuss your project and define a fast, reliable delivery plan.
+        </p>
+
+        <a
+          href="mailto:dibyan.softwaredev@gmail.com?subject=Consulting Inquiry"
+          className="mt-6 inline-flex rounded-full bg-[var(--ink)] px-6 py-3 text-sm font-semibold uppercase tracking-[0.14em] !text-white visited:!text-white hover:!text-white focus:!text-white active:!text-white transition hover:bg-[#111111]"
+        >
+          Email Me
+        </a>
+
+        <div className="mt-6 flex flex-wrap items-center justify-center gap-4 text-sm text-[var(--muted)] sm:gap-6">
+          <a href="https://linkedin.com/in/dibyansoftwaredev" target="_blank" rel="noreferrer" className="inline-link">
+            LinkedIn
           </a>
-          <div className="ai-contact-links">
-            <a href="https://linkedin.com/in/dibyansoftwaredev" target="_blank" rel="noreferrer">
-              LinkedIn
-            </a>
-            <a href="https://github.com/dibyansoftwaredev" target="_blank" rel="noreferrer">
-              GitHub
-            </a>
-            <span>Kathmandu, Nepal (NPT/UTC+5:45)</span>
-          </div>
-          <div className="ai-resume-link-wrap">
-            <Link href="/resume" className="ai-resume-link">
-              View the resume
-            </Link>
-          </div>
+          <a href="https://github.com/dibyansoftwaredev" target="_blank" rel="noreferrer" className="inline-link">
+            GitHub
+          </a>
+          <span>Kathmandu, Nepal (NPT/UTC+5:45)</span>
         </div>
       </section>
-
-      <footer className="ai-footer">
-        <div className="ai-container">
-          <p>© 2026 Dibyan Maharjan. Senior Frontend Engineer and AI Automation Specialist.</p>
-          <p className="ai-footer-sub">React + Next.js + TypeScript + AI | Available for consulting</p>
-        </div>
-      </footer>
     </main>
   );
 }
