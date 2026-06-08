@@ -1,12 +1,15 @@
 @import "tailwindcss";
 
 :root {
-  --sand: #f6f1e6;
-  --ink: #1f1b15;
-  --muted: #6c6359;
-  --stroke: #ded7c8;
-  --accent: #b9772c;
-  --shadow: 0 25px 55px rgba(20, 15, 10, 0.08);
+  --sand: #101010;
+  --surface: #151515;
+  --paper: #0f0f0f;
+  --ink: #f3f3f3;
+  --muted: #a4a4a4;
+  --stroke: #343434;
+  --accent: #ffffff;
+  --accent-soft: #202020;
+  --shadow: 0 28px 80px rgba(0, 0, 0, 0.35);
 }
 
 html {
@@ -25,7 +28,7 @@ body {
 }
 
 ::selection {
-  background: var(--ink);
+  background: var(--accent);
   color: var(--sand);
 }
 
@@ -67,17 +70,18 @@ a:focus-visible {
 }
 
 .section-heading {
-  font-size: clamp(1.5rem, 2vw, 2.2rem);
-  letter-spacing: -0.03em;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0;
   text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 1.5rem;
+  color: var(--accent);
+  margin-bottom: 0.85rem;
 }
 
 .surface-card {
-  background: #fffdf8;
+  background: var(--surface);
   border: 1px solid var(--stroke);
-  border-radius: 24px;
+  border-radius: 8px;
   padding: 1.75rem;
   box-shadow: var(--shadow);
 }
@@ -93,8 +97,9 @@ a:focus-visible {
   padding: 0.35rem 0.85rem;
   border-radius: 999px;
   font-size: 0.85rem;
-  background: #efe7d7;
-  color: #4c4333;
+  background: var(--accent-soft);
+  color: var(--ink);
+  border: 1px solid var(--stroke);
 }
 
 .list-reset {
@@ -134,3 +139,70 @@ a:focus-visible {
   border-color: var(--accent);
 }
 
+.hero-reveal {
+  animation: hero-reveal 700ms ease both;
+}
+
+.hero-reveal-delay {
+  animation: hero-reveal 700ms ease 130ms both;
+}
+
+.hero-reveal-late {
+  animation: hero-reveal 700ms ease 260ms both;
+}
+
+.orbit-slow {
+  animation: orbit-drift 18s linear infinite;
+}
+
+.orbit-reverse {
+  animation: orbit-drift 24s linear infinite reverse;
+}
+
+.tech-marquee {
+  animation: tech-glow 6s ease-in-out infinite;
+}
+
+@keyframes hero-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes orbit-drift {
+  from {
+    transform: rotate(0deg) translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: rotate(360deg) translate3d(0, 0, 0);
+  }
+}
+
+@keyframes tech-glow {
+  0%,
+  100% {
+    border-color: var(--stroke);
+  }
+
+  50% {
+    border-color: rgba(255, 255, 255, 0.55);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-reveal,
+  .hero-reveal-delay,
+  .hero-reveal-late,
+  .orbit-slow,
+  .orbit-reverse,
+  .tech-marquee {
+    animation: none;
+  }
+}

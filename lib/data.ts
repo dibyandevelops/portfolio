@@ -506,5 +506,174 @@ Observability is a product feature for a solo founder. It shortens the distance 
     publishedAt: '2026-06-06',
     tags: ['Observability', 'Founder', 'DevOps'],
     readTime: 4
+  },
+  {
+    id: 7,
+    slug: 'auth-rbac-lessons-from-locoxperts',
+    title: 'Auth and RBAC Lessons from Building LocoXperts',
+    excerpt: 'What changes when one product needs admins, experts, participants, Google OAuth, phone OTP, and server-side guards.',
+    content: `# Auth and RBAC Lessons from Building LocoXperts
+
+Authentication looks simple until the product has real roles. LocoXperts needs admins, experts, participants, review workflows, booking flows, and protected admin actions.
+
+That means auth is not just login. It is product architecture.
+
+## Separate Identity from Permission
+
+Identity answers "who is this user?" Permission answers "what can this user do right now?"
+
+I prefer keeping those ideas separate. Google OAuth and Firebase phone OTP can establish identity, but role-based access control should be enforced server-side where sensitive actions happen.
+
+## Server Guards Matter
+
+Client-side hiding is useful for UX, but it is not security. Admin routes, expert verification, booking changes, and review actions need server-side checks.
+
+Every protected route should make the permission boundary obvious in code review.
+
+## Roles Should Match Product Language
+
+Admin, Expert, and Participant are not just database values. They reflect workflows: who can create events, who can verify trails, who can request bookings, and who can review submissions.
+
+When roles match product language, the code becomes easier to reason about.
+
+## My Checklist
+
+- Keep auth checks close to protected server actions
+- Avoid trusting client role state for sensitive decisions
+- Log important permission failures
+- Test the unhappy paths, not only successful login
+- Make admin review workflows explicit
+
+## My Take
+
+Good auth design is boring in the best way. Users should not notice it, contributors should feel protected by it, and engineers should be able to audit it quickly.`,
+    author: 'Dibyan Maharjan',
+    publishedAt: '2026-06-05',
+    tags: ['Auth', 'RBAC', 'Security'],
+    readTime: 5
+  },
+  {
+    id: 8,
+    slug: 'design-systems-without-theatre',
+    title: 'Design Systems Without Theatre',
+    excerpt: 'A practical take on building component libraries that actually help teams ship instead of becoming a parallel product.',
+    content: `# Design Systems Without Theatre
+
+Design systems fail when they become theatre: polished demos, huge naming debates, and components nobody uses in production.
+
+At Restworld, the useful parts were practical: shared components, design tokens, skeleton loaders, form patterns, and Storybook documentation that helped engineers ship consistent UI faster.
+
+## Start with Repetition
+
+Do not build a design system from imagination. Build it from repeated product needs.
+
+Buttons, cards, forms, modals, navbars, loaders, and empty states are boring. That is exactly why they belong in a shared system.
+
+## Documentation Should Reduce Questions
+
+Storybook is useful when it answers how to use the component, what variants exist, and what accessibility behavior is expected.
+
+It is less useful when it becomes a gallery detached from real product usage.
+
+## Tokens Need Ownership
+
+Design tokens should keep visual decisions consistent, but they need clear ownership. Color, spacing, radius, typography, and motion should not drift through one-off utility choices.
+
+## My Checklist
+
+- Build from repeated production patterns
+- Keep component APIs small
+- Include loading, disabled, empty, and error states
+- Document accessibility expectations
+- Remove unused variants before they become debt
+
+## My Take
+
+A good design system is infrastructure. It should make the correct UI easier to ship than the inconsistent one.`,
+    author: 'Dibyan Maharjan',
+    publishedAt: '2026-06-05',
+    tags: ['Design Systems', 'React', 'Storybook'],
+    readTime: 4
+  },
+  {
+    id: 9,
+    slug: 'elixir-phoenix-for-frontend-engineers',
+    title: 'Elixir/Phoenix Notes for Frontend Engineers',
+    excerpt: 'What frontend-heavy engineers learn when they start owning API behavior, SQL shape, and backend delivery.',
+    content: `# Elixir/Phoenix Notes for Frontend Engineers
+
+Frontend engineers become more effective when they understand the backend shape behind the UI.
+
+At Restworld, contributing to Elixir/Phoenix services changed how I thought about product delivery. API design, database queries, pagination, subscriptions, and performance metrics all shaped the frontend experience.
+
+## API Shape Is UX
+
+Slow or awkward APIs create complicated frontend code. Clear endpoints, predictable errors, and useful payloads make UI work simpler.
+
+When frontend and backend are owned together, less time is lost translating intent across boundaries.
+
+## SQL Details Leak Into Product Behavior
+
+DISTINCT clauses, joins, COALESCE handling, NULL-safe pipelines, and pagination are not abstract database concerns. They decide whether users see correct data.
+
+A small query bug can become a confusing product bug.
+
+## Backend Work Improves Frontend Judgment
+
+Owning API behavior makes you more careful with client state, loading states, caching, and optimistic updates.
+
+You stop treating the backend as a black box and start designing the whole interaction.
+
+## My Take
+
+Frontend specialists do not need to become backend-only engineers. But learning enough backend to own product behavior end to end is a serious advantage.`,
+    author: 'Dibyan Maharjan',
+    publishedAt: '2026-06-04',
+    tags: ['Elixir', 'Phoenix', 'Full Stack'],
+    readTime: 4
+  },
+  {
+    id: 10,
+    slug: 'performance-budgets-for-map-and-dashboard-apps',
+    title: 'Performance Budgets for Maps and Dashboards',
+    excerpt: 'Maps, filters, charts, and image-heavy screens need different performance budgets than normal content pages.',
+    content: `# Performance Budgets for Maps and Dashboards
+
+Maps and dashboards fail differently than marketing pages. They often load more JavaScript, fetch more data, render more dynamic UI, and respond to more user input.
+
+That means the performance budget needs to match the product.
+
+## Budget the Expensive Parts
+
+For map screens, I watch marker count, clustering strategy, popup rendering, image payloads, and search latency.
+
+For dashboards, I watch chart rendering, table virtualization, filter recomputation, API waterfalls, and unnecessary re-renders.
+
+## Separate Server State from UI State
+
+Server state should be fetched, cached, invalidated, and retried deliberately. UI state should stay local when possible.
+
+Mixing the two creates confusing bugs and unnecessary network traffic.
+
+## Use Workers When It Matters
+
+Moving clustering or heavy computation away from the main thread can protect interaction quality. This is especially useful for map search and large result sets.
+
+## My Checklist
+
+- Define acceptable map load and search latency
+- Cap or cluster visible markers
+- Debounce expensive interactions
+- Memoize chart and table transforms
+- Audit API waterfalls before adding more client state
+- Test on mid-range devices, not only a development machine
+
+## My Take
+
+Performance budgets are most useful when they are specific. A map product, analytics dashboard, and landing page should not share the same definition of fast.`,
+    author: 'Dibyan Maharjan',
+    publishedAt: '2026-06-04',
+    tags: ['Performance', 'Maps', 'Dashboards'],
+    readTime: 5
   }
 ];

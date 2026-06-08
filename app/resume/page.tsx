@@ -46,22 +46,22 @@ export default function ResumePage() {
   const recentPosts = blogsData.slice(0, 3);
 
   return (
-    <main className="min-h-screen bg-[#fffdf8] text-[var(--ink)]">
-      <header className="border-b-2 border-[var(--ink)] bg-[#fffdf8]">
+    <main className="min-h-screen bg-[var(--sand)] text-[var(--ink)]">
+      <header className="border-b border-[var(--stroke)] bg-[var(--surface)]">
         <div className="mx-auto w-full max-w-[1120px] px-4 py-8 sm:px-6 lg:px-8">
           <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
             <div>
               <Link href="/" className="inline-link text-sm font-semibold uppercase text-[var(--muted)]">
                 Back to home
               </Link>
-              <h1 className="mt-4 text-4xl font-bold uppercase leading-none sm:text-5xl">Dibyan Maharjan</h1>
+              <h1 className="mt-4 font-mono text-4xl font-bold uppercase leading-none sm:text-5xl">Dibyan Maharjan</h1>
               <p className="mt-3 text-sm font-semibold uppercase text-[var(--muted)]">
                 Senior Full-Stack Engineer / Frontend Specialist / AI-Augmented Development
               </p>
             </div>
             <a
               href="mailto:dibyan.softwaredev@gmail.com?subject=Resume Inquiry"
-              className="inline-flex w-fit rounded-full bg-[var(--ink)] px-5 py-3 text-sm font-semibold uppercase !text-white visited:!text-white hover:!text-white focus:!text-white active:!text-white"
+              className="inline-flex w-fit rounded-full bg-[var(--accent)] px-5 py-3 text-sm font-semibold uppercase !text-black visited:!text-black hover:!text-black focus:!text-black active:!text-black"
             >
               Contact
             </a>
@@ -70,7 +70,7 @@ export default function ResumePage() {
           <div className="mt-6 grid gap-2 text-sm text-[var(--muted)] sm:grid-cols-2 lg:grid-cols-4">
             {contactLinks.map((item) => (
               <a key={item.label} href={item.href} className="border-t border-[var(--stroke)] pt-2 hover:text-[var(--ink)]">
-                <span className="block text-xs font-semibold uppercase text-[var(--ink)]">{item.label}</span>
+                <span className="block text-xs font-semibold uppercase text-[var(--accent)]">{item.label}</span>
                 {item.value}
               </a>
             ))}
@@ -82,7 +82,7 @@ export default function ResumePage() {
         <div className="space-y-10">
           <section className="space-y-3">
             <p className="section-heading">Professional Summary</p>
-            <p className="text-lg leading-relaxed text-[var(--muted)]">
+            <p className="rounded-[1.5rem] border border-[var(--stroke)] bg-[var(--surface)] p-5 text-lg leading-relaxed text-[var(--muted)] shadow-[var(--shadow)]">
               Senior full-stack engineer with 7+ years of experience and 5,000+ commits across
               production codebases spanning React, Next.js, TypeScript, Elixir/Phoenix, PostgreSQL,
               maps, analytics dashboards, and AI tooling. Founder and solo engineer behind LocoXperts,
@@ -124,7 +124,7 @@ export default function ResumePage() {
             <p className="section-heading">Selected Projects</p>
             <div className="grid gap-4 md:grid-cols-2">
               {featuredProjects.map((project) => (
-                <article key={project.id} className="rounded-lg border border-[var(--stroke)] bg-[var(--sand)] p-4">
+                <article key={project.id} className="rounded-[1.5rem] border border-[var(--stroke)] bg-[var(--surface)] p-4 shadow-[var(--shadow)]">
                   <h2 className="text-xl font-semibold">{project.title}</h2>
                   <p className="mt-2 text-sm text-[var(--muted)]">{project.description}</p>
                   <p className="mt-3 text-xs font-semibold uppercase text-[var(--accent)]">
@@ -146,7 +146,7 @@ export default function ResumePage() {
                 ["30,000+", "Monthly users served"],
                 ["200+", "Solo LocoXperts commits"],
               ].map(([value, label]) => (
-                <div key={value} className="rounded-lg border border-[var(--stroke)] bg-[var(--sand)] p-4">
+                <div key={value} className="rounded-[1.5rem] border border-[var(--stroke)] bg-[var(--surface)] p-4">
                   <p className="text-2xl font-semibold">{value}</p>
                   <p className="text-sm text-[var(--muted)]">{label}</p>
                 </div>
@@ -154,7 +154,7 @@ export default function ResumePage() {
             </div>
           </section>
 
-          <section className="space-y-3">
+          <section className="space-y-3 rounded-[1.5rem] border border-[var(--stroke)] bg-[var(--surface)] p-4">
             <p className="section-heading">Technical Skills</p>
             <div className="space-y-4">
               {skillGroups.map((group) => (
@@ -166,7 +166,7 @@ export default function ResumePage() {
             </div>
           </section>
 
-          <section className="space-y-3">
+          <section className="space-y-3 rounded-[1.5rem] border border-[var(--stroke)] bg-[var(--surface)] p-4">
             <p className="section-heading">Education & Certs</p>
             <ul className="space-y-2 text-sm text-[var(--muted)]">
               {education.map((item) => (
@@ -175,7 +175,7 @@ export default function ResumePage() {
             </ul>
           </section>
 
-          <section className="space-y-3">
+          <section className="space-y-3 rounded-[1.5rem] border border-[var(--stroke)] bg-[var(--surface)] p-4">
             <p className="section-heading">Recent Writing</p>
             <div className="space-y-3">
               {recentPosts.map((post) => (
