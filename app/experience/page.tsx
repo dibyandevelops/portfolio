@@ -7,11 +7,11 @@ export default function ExperiencePage() {
         <div className="space-y-3">
           <p className="section-heading">Experience</p>
           <h1 className="text-4xl font-semibold tracking-tight">
-            Building and leading frontend teams across SaaS, analytics, and developer tooling.
+            Full-stack product engineering across LocoXperts, Restworld, and UXCam.
           </h1>
           <p className="text-[var(--muted)]">
-            Highlights from the last several years—pairing delivery leadership with hands-on shipping,
-            hiring, and coaching.
+            CV-backed highlights across solo product building, React/Next.js frontend leadership,
+            Elixir/Phoenix backend work, analytics dashboards, AI tooling, and mentoring.
           </p>
         </div>
 
@@ -57,4 +57,3 @@ export default function ExperiencePage() {
     </main>
   );
 }
-

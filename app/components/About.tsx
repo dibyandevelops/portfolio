@@ -28,20 +28,20 @@ export const About = () => {
             {/* Quick Facts */}
             <div className="grid grid-cols-2 gap-4">
               <div className="text-center p-4 bg-slate-50 dark:bg-slate-800 rounded-lg">
-                <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">6+</div>
+                <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">7+</div>
                 <div className="text-sm text-slate-600 dark:text-slate-400">Years Experience</div>
               </div>
               <div className="text-center p-4 bg-slate-50 dark:bg-slate-800 rounded-lg">
-                <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">50+</div>
-                <div className="text-sm text-slate-600 dark:text-slate-400">Projects</div>
+                <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">5,000+</div>
+                <div className="text-sm text-slate-600 dark:text-slate-400">Commits</div>
               </div>
               <div className="text-center p-4 bg-slate-50 dark:bg-slate-800 rounded-lg">
-                <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">15+</div>
-                <div className="text-sm text-slate-600 dark:text-slate-400">Team Members</div>
+                <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">30,000+</div>
+                <div className="text-sm text-slate-600 dark:text-slate-400">Monthly Users</div>
               </div>
               <div className="text-center p-4 bg-slate-50 dark:bg-slate-800 rounded-lg">
-                <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">99%</div>
-                <div className="text-sm text-slate-600 dark:text-slate-400">Client Satisfaction</div>
+                <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">200+</div>
+                <div className="text-sm text-slate-600 dark:text-slate-400">LocoXperts Commits</div>
               </div>
             </div>
           </div>
@@ -50,16 +50,15 @@ export const About = () => {
           <div className="space-y-8">
             <div>
               <h3 className="text-2xl font-semibold text-slate-900 dark:text-white mb-4">
-                Frontend Architecture Expert
+                Senior Full-Stack Engineer
               </h3>
               <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
-                With over 6 years of experience in frontend development, I specialize in building
-                scalable, high-performance web applications. My expertise lies in React ecosystem,
-                Next.js, TypeScript, and modern CSS frameworks.
+                With 7+ years of production experience, I build across React, Next.js, TypeScript,
+                Elixir/Phoenix, PostgreSQL, maps, analytics dashboards, and AI-assisted workflows.
               </p>
               <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
-                I lead development teams, establish coding standards, and implement best practices
-                that ensure code quality, maintainability, and exceptional user experiences.
+                I am currently the founder and solo engineer behind LocoXperts, and previously shipped
+                core platform work at Restworld and complex visualization systems at UXCam.
               </p>
             </div>
 
@@ -71,13 +70,13 @@ export const About = () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {[
                   'Performance Optimization',
-                  'Architecture Design',
-                  'Team Leadership',
-                  'Code Quality',
-                  'User Experience',
-                  'Scalable Solutions',
-                  'Modern Technologies',
-                  'Best Practices'
+                  'Full-Stack Architecture',
+                  'AI-Assisted Delivery',
+                  'Data Visualization',
+                  'Auth & RBAC',
+                  'Product Engineering',
+                  'Observability',
+                  'Technical Mentoring'
                 ].map((strength, index) => (
                   <div key={index} className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-blue-600 dark:bg-blue-400 rounded-full"></div>
@@ -93,9 +92,8 @@ export const About = () => {
                 My Philosophy
               </h4>
               <p className="text-slate-700 dark:text-slate-300 italic">
-                "Great frontend architecture isn't just about writing clean code—it's about creating
-                systems that scale, perform, and delight users while empowering development teams
-                to build faster and better."
+                "AI is useful leverage, but production quality still comes from clear architecture,
+                careful review, secure data design, and ownership from idea to deployment."
               </p>
             </div>
           </div>

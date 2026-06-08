@@ -13,13 +13,14 @@ const resourceLinks = [
   { href: "/projects", label: "Project case studies", meta: "Architecture & delivery" },
   { href: "/experience", label: "Resume snapshot", meta: "Teams, roles, impact" },
   { href: "/blogs", label: "Notes & writing", meta: "Playbooks for teams" },
-  { href: "mailto:dibyan.maharjan@gmail.com", label: "Say hello", meta: "Consulting & collaborations" },
+  { href: "https://locoxperts.com", label: "LocoXperts", meta: "Founder-built product" },
+  { href: "mailto:dibyan.softwaredev@gmail.com", label: "Say hello", meta: "Consulting & collaborations" },
 ];
 
 const highlightStats = [
-  { value: "7 years", label: "Leading product builds" },
-  { value: "80% fewer", label: "Support tickets after UI revamps" },
-  { value: "90+ CLS", label: "Core Web Vital score on flagship apps" },
+  { value: "7+ years", label: "Production engineering" },
+  { value: "5,000+", label: "Commits across production codebases" },
+  { value: "30,000+", label: "Monthly users served at Restworld" },
 ];
 
 export default function ResumePage() {
@@ -30,7 +31,7 @@ export default function ResumePage() {
     <main className="bg-[var(--sand)] text-[var(--ink)]">
       <header className="section-shell space-y-10">
         <div className="flex flex-wrap items-center justify-between gap-4">
-          <p className="mono-label">Dibyan Maharjan — frontend engineering lead</p>
+          <p className="mono-label">Dibyan Maharjan — senior full-stack engineer</p>
           <div className="flex flex-wrap items-center gap-5">
             <Link href="/" className="inline-link text-sm font-semibold uppercase tracking-[0.2em]">
               Back to New Home
@@ -48,15 +49,15 @@ export default function ResumePage() {
         <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,2.1fr)_minmax(0,1fr)]">
           <div className="space-y-6">
             <p className="text-xs uppercase tracking-[0.4em] text-[var(--muted)]">
-              Calm interfaces. Reliable delivery. Friendly tooling.
+              Full-stack systems. Data-heavy interfaces. AI-augmented delivery.
             </p>
             <h1 className="text-4xl leading-tight tracking-[-0.05em] text-[var(--ink)] sm:text-5xl">
-              I help product teams design, build, and ship performant web experiences with less drama.
+              I build production products across React, Next.js, TypeScript, Elixir/Phoenix, PostgreSQL, and modern AI tooling.
             </h1>
             <p className="max-w-2xl text-lg text-[var(--muted)]">
-              Currently leading frontend architecture for distributed teams. I translate research into
-              usable product flows, mentor engineers, and document the process through writing and
-              workshops.
+              Currently founder and solo engineer behind LocoXperts, a live MTB trail discovery and expert
+              booking PWA for Nepal. Previously shipped core platform work at Restworld and complex analytics
+              visualizations at UXCam.
             </p>
             <div className="flex flex-wrap gap-8 pt-4">
               {highlightStats.map((stat) => (
@@ -71,7 +72,7 @@ export default function ResumePage() {
           <div className="surface-card space-y-6">
             <div className="space-y-2">
               <p className="mono-label">Working on</p>
-              <p className="text-xl font-medium">Design systems & hiring partner for EU SaaS teams.</p>
+              <p className="text-xl font-medium">LocoXperts, production AI workflows, maps, bookings, and full-stack product systems.</p>
             </div>
             <div>
               {resourceLinks.map((item) => (
@@ -91,21 +92,21 @@ export default function ResumePage() {
           <div className="surface-card is-quiet space-y-5">
             <p>
               I care about predictable releases, accessible UI systems, and shipping features that feel
-              effortless. My toolkit spans Next.js, TypeScript, GraphQL, and the tooling that keeps
-              teams healthy: design tokens, automated tests, observability, and crisp documentation.
+              effortless. My toolkit spans Next.js, TypeScript, Elixir/Phoenix, PostgreSQL, GraphQL,
+              maps, PWA infrastructure, observability, and AI-assisted development workflows.
             </p>
             <p>
-              Beyond code, I coach engineers through architecture spikes, help product managers
-              sharpen specs, and partner with design to keep UI quality bar high.
+              Beyond code, I design APIs and data models, own deployment details, mentor engineers,
+              and use Codex, Claude, Gemini, Cursor, and Copilot to move faster without lowering the bar.
             </p>
           </div>
           <div className="surface-card space-y-4">
             <p className="mono-label">Principles</p>
             <ul className="list-reset space-y-3">
-              <li>• Small batch shipping over hero launches</li>
-              <li>• Instrument decisions—measure before guessing</li>
-              <li>• Teach the system, not the feature branch</li>
-              <li>• Accessibility is table stakes, not a stretch goal</li>
+              <li>• Own the system end to end, from UX to database</li>
+              <li>• Measure performance and product behavior before guessing</li>
+              <li>• Use AI for leverage, not as a substitute for engineering judgment</li>
+              <li>• Keep accessibility, security, and observability in the default path</li>
             </ul>
           </div>
         </div>
@@ -169,18 +170,21 @@ export default function ResumePage() {
         <p className="section-heading">Contact</p>
         <div className="surface-card space-y-4">
           <p>
-            Available for fractional leadership, design system engagements, and audits focused on
-            performance or developer experience.
+            Available for full-stack product builds, React/Next.js systems, AI-assisted delivery workflows,
+            technical audits, and performance-focused consulting.
           </p>
           <div className="flex flex-wrap gap-6 text-sm">
-            <a href="https://calendly.com/dibyan/30min" className="inline-link" target="_blank" rel="noreferrer">
-              Calendly
-            </a>
             <a href="https://www.linkedin.com/in/dibyansoftwaredev" className="inline-link" target="_blank" rel="noreferrer">
               LinkedIn
             </a>
             <a href="https://github.com/dibyandevelops" className="inline-link" target="_blank" rel="noreferrer">
               GitHub
+            </a>
+            <a href="https://locoxperts.com" className="inline-link" target="_blank" rel="noreferrer">
+              LocoXperts
+            </a>
+            <a href="mailto:dibyan.softwaredev@gmail.com" className="inline-link">
+              Email
             </a>
           </div>
         </div>

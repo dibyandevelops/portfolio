@@ -7,55 +7,82 @@ export const Skills = () => {
 
   const skillCategories = {
     frontend: {
-      title: 'Frontend Technologies',
+      title: 'Frontend Core',
       skills: [
         { name: 'React', level: 95, icon: '⚛️' },
-        { name: 'Next.js', level: 90, icon: '⚡' },
+        { name: 'Next.js App Router', level: 92, icon: '⚡' },
         { name: 'TypeScript', level: 92, icon: '📘' },
         { name: 'JavaScript (ES6+)', level: 95, icon: '🟨' },
         { name: 'HTML5 & CSS3', level: 90, icon: '🌐' },
         { name: 'Tailwind CSS', level: 88, icon: '🎨' },
-        { name: 'Styled Components', level: 85, icon: '💅' },
-        { name: 'Redux/Zustand', level: 88, icon: '📦' }
+        { name: 'React Query', level: 90, icon: '📦' },
+        { name: 'Redux/Zustand/Jotai', level: 88, icon: '📦' }
       ]
     },
     architecture: {
-      title: 'Architecture & Patterns',
+      title: 'Architecture & Data',
       skills: [
-        { name: 'Component Design', level: 92, icon: '🏗️' },
-        { name: 'State Management', level: 90, icon: '⚙️' },
-        { name: 'Performance Optimization', level: 88, icon: '🚀' },
-        { name: 'Code Splitting', level: 85, icon: '✂️' },
-        { name: 'Micro Frontends', level: 80, icon: '🧩' },
-        { name: 'Design Systems', level: 85, icon: '🎯' },
-        { name: 'Testing Strategies', level: 82, icon: '🧪' },
-        { name: 'CI/CD Integration', level: 78, icon: '🔄' }
+        { name: 'Monorepos (NX/Lerna)', level: 88, icon: '🏗️' },
+        { name: 'SSR/ISR/SSG', level: 88, icon: '⚙️' },
+        { name: 'Design Systems', level: 90, icon: '🎯' },
+        { name: 'Storybook', level: 85, icon: '📖' },
+        { name: 'Core Web Vitals', level: 88, icon: '🚀' },
+        { name: 'GraphQL/REST', level: 86, icon: '🔗' },
+        { name: 'Mapbox/MapLibre', level: 88, icon: '🗺️' },
+        { name: 'SVG Visualizations', level: 88, icon: '📈' }
+      ]
+    },
+    backend: {
+      title: 'Backend & Auth',
+      skills: [
+        { name: 'Elixir/Phoenix', level: 82, icon: '💧' },
+        { name: 'Node.js/Express', level: 82, icon: '🟢' },
+        { name: 'PostgreSQL', level: 86, icon: '🐘' },
+        { name: 'MongoDB', level: 78, icon: '🍃' },
+        { name: 'AWS DynamoDB', level: 76, icon: '☁️' },
+        { name: 'JWT/RBAC', level: 86, icon: '🔐' },
+        { name: 'Google OAuth', level: 82, icon: '🔑' },
+        { name: 'Firebase Phone OTP', level: 82, icon: '📱' }
+      ]
+    },
+    ai: {
+      title: 'AI & Tooling',
+      skills: [
+        { name: 'OpenAI Codex', level: 90, icon: '🤖' },
+        { name: 'Claude', level: 90, icon: '🤖' },
+        { name: 'Google Gemini', level: 84, icon: '🤖' },
+        { name: 'Cursor', level: 90, icon: '⌨️' },
+        { name: 'GitHub Copilot', level: 88, icon: '🤖' },
+        { name: 'Agentic Workflows', level: 86, icon: '⚙️' },
+        { name: 'AI Scaffolding', level: 88, icon: '🏗️' },
+        { name: 'AI Content Generation', level: 84, icon: '✍️' }
       ]
     },
     tools: {
-      title: 'Development Tools',
+      title: 'Testing & DevOps',
       skills: [
         { name: 'Git & GitHub', level: 90, icon: '📚' },
         { name: 'Webpack/Vite', level: 85, icon: '📦' },
-        { name: 'ESLint & Prettier', level: 88, icon: '✨' },
         { name: 'Jest & Testing Library', level: 82, icon: '🧪' },
-        { name: 'Storybook', level: 80, icon: '📖' },
-        { name: 'Figma Integration', level: 75, icon: '🎨' },
-        { name: 'Docker', level: 70, icon: '🐳' },
-        { name: 'AWS/Vercel', level: 75, icon: '☁️' }
+        { name: 'Vitest', level: 82, icon: '🧪' },
+        { name: 'Cypress/Selenium', level: 76, icon: '🧪' },
+        { name: 'Docker/Kubernetes', level: 72, icon: '☸️' },
+        { name: 'Vercel', level: 86, icon: '☁️' },
+        { name: 'Bitbucket Pipelines', level: 82, icon: '🔄' },
+        { name: 'PWA Service Workers', level: 84, icon: '📲' }
       ]
     },
     soft: {
-      title: 'Soft Skills',
+      title: 'Observability & Infra',
       skills: [
-        { name: 'Team Leadership', level: 90, icon: '👥' },
-        { name: 'Technical Mentoring', level: 88, icon: '🎓' },
-        { name: 'Project Management', level: 82, icon: '📋' },
-        { name: 'Client Communication', level: 85, icon: '💬' },
-        { name: 'Problem Solving', level: 92, icon: '🔍' },
-        { name: 'Code Review', level: 90, icon: '👀' },
-        { name: 'Documentation', level: 85, icon: '📝' },
-        { name: 'Agile Methodologies', level: 88, icon: '🔄' }
+        { name: 'Sentry', level: 86, icon: '📡' },
+        { name: 'Datadog', level: 82, icon: '📈' },
+        { name: 'Mixpanel/Hotjar', level: 80, icon: '📊' },
+        { name: 'Vercel Analytics', level: 84, icon: '📊' },
+        { name: 'Resend/Nodemailer', level: 82, icon: '✉️' },
+        { name: 'Neon PostgreSQL', level: 84, icon: '🐘' },
+        { name: 'Strava API', level: 78, icon: '🔌' },
+        { name: 'Google Places API', level: 80, icon: '🗺️' }
       ]
     }
   };
@@ -75,7 +102,7 @@ export const Skills = () => {
             Skills & Expertise
           </h2>
           <p className="text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto">
-            Comprehensive technical skills and architectural expertise developed over years of building scalable applications
+            CV-backed skills across full-stack product engineering, data visualization, auth, DevOps, observability, and AI-assisted delivery.
           </p>
         </div>
 

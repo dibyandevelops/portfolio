@@ -13,22 +13,27 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Dibyan Maharjan | Frontend Engineer",
+  title: "Dibyan Maharjan | Senior Full-Stack Engineer",
   description:
-    "Dibyan Maharjan builds reliable frontend systems, leads product engineering teams, and documents the process across talks, writing, and hands-on mentorship.",
+    "Dibyan Maharjan is a senior full-stack engineer and frontend specialist building React, Next.js, TypeScript, Elixir/Phoenix, and AI-augmented product systems.",
   keywords: [
     "Dibyan Maharjan",
+    "senior full-stack engineer",
     "frontend engineer",
     "Next.js consultant",
     "React architecture",
+    "Elixir Phoenix",
+    "AI augmented development",
+    "OpenAI Codex",
+    "LocoXperts",
     "frontend architect",
     'software developer'
   ],
   authors: [{ name: "Dibyan Maharjan", url: "https://www.linkedin.com/in/dibyansoftwaredev" }],
   openGraph: {
-    title: "Dibyan Maharjan · Frontend Engineer",
+    title: "Dibyan Maharjan · Senior Full-Stack Engineer",
     description:
-      "Simple notes on building resilient product teams, performant interfaces, and developer tooling.",
+      "Senior full-stack engineer, frontend specialist, and founder of LocoXperts with 5,000+ commits across production systems.",
     type: "website",
     url: "https://www.dibyan.com.np",
   },

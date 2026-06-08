@@ -81,7 +81,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           <p className="mono-label">Author</p>
           <p>
             Written by <span className="font-semibold text-[var(--ink)]">{post.author}</span>. Questions?
-            <a href="mailto:dibyan.maharjan@gmail.com" className="inline-link ml-2">
+            <a href="mailto:dibyan.softwaredev@gmail.com" className="inline-link ml-2">
               Reach out.
             </a>
           </p>

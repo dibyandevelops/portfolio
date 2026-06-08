@@ -7,11 +7,11 @@ export const Hero = () => {
   const [isTyping, setIsTyping] = useState(true);
 
   const roles = [
-    'Frontend Architect',
-    'React Specialist',
-    'UI/UX Enthusiast',
-    'Performance Optimizer',
-    'Team Leader'
+    'Senior Full-Stack Engineer',
+    'Frontend Specialist',
+    'AI-Augmented Developer',
+    'Product Engineer',
+    'Founder'
   ];
 
   useEffect(() => {
@@ -71,8 +71,8 @@ export const Hero = () => {
           {/* Description */}
           <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 mb-12 max-w-3xl mx-auto leading-relaxed">
             Crafting exceptional user experiences through innovative frontend architecture,
-            performance optimization, and scalable design systems. Leading teams to build
-            the next generation of web applications.
+            full-stack product systems, backend APIs, maps, analytics dashboards, and
+            AI-assisted development workflows.
           </p>
 
           {/* CTA Buttons */}
@@ -94,16 +94,16 @@ export const Hero = () => {
           {/* Stats */}
           <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-2xl mx-auto">
             <div className="text-center">
-              <div className="text-3xl font-bold text-blue-600 dark:text-blue-400">6+</div>
+              <div className="text-3xl font-bold text-blue-600 dark:text-blue-400">7+</div>
               <div className="text-slate-600 dark:text-slate-400">Years Experience</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-blue-600 dark:text-blue-400">50+</div>
-              <div className="text-slate-600 dark:text-slate-400">Projects Delivered</div>
+              <div className="text-3xl font-bold text-blue-600 dark:text-blue-400">5,000+</div>
+              <div className="text-slate-600 dark:text-slate-400">Production Commits</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-blue-600 dark:text-blue-400">15+</div>
-              <div className="text-slate-600 dark:text-slate-400">Team Members Led</div>
+              <div className="text-3xl font-bold text-blue-600 dark:text-blue-400">30,000+</div>
+              <div className="text-slate-600 dark:text-slate-400">Monthly Users Served</div>
             </div>
           </div>
         </div>

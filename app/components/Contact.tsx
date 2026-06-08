@@ -62,12 +62,19 @@ export const Contact = () => {
       title: 'LinkedIn',
       value: 'linkedin.com/in/dibyansoftwaredev',
       link: 'https://linkedin.com/in/dibyansoftwaredev'
+    },
+    {
+      icon: '🚵',
+      title: 'LocoXperts',
+      value: 'locoxperts.com',
+      link: 'https://locoxperts.com'
     }
   ];
 
   const socialLinks = [
     { name: 'GitHub', icon: '🐙', url: 'https://github.com/dibyandevelops' },
     { name: 'LinkedIn', icon: '💼', url: 'https://linkedin.com/in/dibyansoftwaredev' },
+    { name: 'LocoXperts', icon: '🚵', url: 'https://locoxperts.com' },
   ];
 
   return (
@@ -78,7 +85,7 @@ export const Contact = () => {
             Let's Connect
           </h2>
           <p className="text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto">
-            Ready to start a project or just want to chat? I'd love to hear from you!
+            Available for full-stack product builds, React/Next.js systems, AI-assisted workflows, and technical audits.
           </p>
         </div>
 
@@ -173,7 +180,7 @@ export const Contact = () => {
                 Get In Touch
               </h3>
               <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed mb-8">
-                I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
+                I work best on serious product builds where frontend, backend, data, deployment, and AI tooling need to move together.
               </p>
             </div>
 
@@ -226,7 +233,7 @@ export const Contact = () => {
                 </span>
               </div>
               <p className="text-green-700 dark:text-green-300 text-sm">
-                I'm currently accepting new client work and would love to discuss your project requirements.
+                I'm currently accepting focused consulting and product engineering work from Kathmandu, Nepal.
               </p>
             </div>
           </div>
@@ -239,16 +246,16 @@ export const Contact = () => {
               Ready to Start Your Project?
             </h3>
             <p className="text-lg text-slate-600 dark:text-slate-400 mb-6">
-              Let's discuss how I can help bring your vision to life with cutting-edge frontend architecture and development.
+              Let's discuss how I can help turn the product, stack, and delivery plan into a production system.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 rel='noreferrer noopener'
                 target='_blank'
-                href="https://calendly.com/dibyan/30min"
+                href="mailto:dibyan.softwaredev@gmail.com?subject=Product Engineering Inquiry"
                 className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
               >
-                Schedule a Call
+                Email Me
               </a>
               <a
                 href="#projects"

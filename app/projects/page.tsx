@@ -8,11 +8,11 @@ export default function ProjectsPage() {
         <div className="space-y-3">
           <p className="section-heading">Projects & initiatives</p>
           <h1 className="text-4xl font-semibold tracking-tight">
-            Systems work, design system rollouts, and product launches I led or co-led.
+            Production systems from the CV: LocoXperts, Restworld, UXCam, and AI-assisted engineering.
           </h1>
           <p className="text-[var(--muted)]">
-            Every project pairs measurable product impact with an engineering playbook—architecture
-            notes, team onboarding, and instrumentation so the next release is calmer.
+            These are the concrete platforms, visualizations, backend services, and delivery workflows
+            behind the 5,000+ production commits listed in the resume.
           </p>
         </div>
 
@@ -22,7 +22,7 @@ export default function ProjectsPage() {
               <div className="flex flex-wrap items-center gap-3 text-sm">
                 <span className="tag-chip capitalize">{project.category}</span>
                 <span className="mono-label">{project.performance.metrics}</span>
-                <span className="text-[var(--muted)]">{project.performance.score}%</span>
+                <span className="text-[var(--muted)]">{project.performance.score}</span>
               </div>
 
               <div>
@@ -62,4 +62,3 @@ export default function ProjectsPage() {
     </main>
   );
 }
-

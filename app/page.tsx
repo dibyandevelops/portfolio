@@ -3,38 +3,40 @@ import Link from "next/link";
 const techStack = [
   "React & Next.js",
   "TypeScript",
+  "Elixir/Phoenix",
+  "PostgreSQL",
   "OpenAI Codex",
-  "Google Gemini",
   "Claude",
+  "Google Gemini",
   "GitHub Copilot",
 ];
 
 const stats = [
   { number: "30,000+", label: "Monthly Users Served" },
-  { number: "6+ Years", label: "Senior Experience" },
-  { number: "70%", label: "Time Reduction with AI" },
+  { number: "7+ Years", label: "Production Engineering" },
+  { number: "5,000+", label: "Production Commits" },
 ];
 
 const services = [
   {
-    title: "AI-Powered Dashboard Development",
+    title: "Full-Stack Product Development",
     description:
-      "Production-ready React/Next.js dashboards with real-time data visualizations, delivered in 1-2 weeks using AI-accelerated workflows.",
-    perfectFor: "SaaS platforms, analytics tools, internal dashboards",
+      "Production-ready Next.js products with APIs, authentication, database design, observability, and deployment handled end to end.",
+    perfectFor: "Founders, local platforms, SaaS MVPs, internal tools",
     price: "From NPR 90,000 | 3-5 week delivery",
   },
   {
-    title: "Frontend AI Integration",
+    title: "AI-Assisted Feature Delivery",
     description:
-      "Integrate Claude/GPT-4 into your React applications for chat interfaces, AI-powered search, and intelligent features.",
-    perfectFor: "B2B SaaS, enterprise apps, developer tools",
+      "Integrate Codex, Claude, Gemini, and GPT workflows into real product development for faster scaffolding, refactors, tests, and content generation.",
+    perfectFor: "Teams adopting AI tooling, product automation, content workflows",
     price: "From NPR 175,000 | 5-8 week delivery",
   },
   {
-    title: "Figma to React Conversion",
+    title: "Frontend Systems & Dashboards",
     description:
-      "Convert your Figma designs to production-grade React/Next.js code using AI assistance. 10x faster than manual conversion.",
-    perfectFor: "Design agencies, startups, rebrand projects",
+      "React/Next.js dashboards, design systems, maps, forms, data visualizations, and performance-sensitive product interfaces.",
+    perfectFor: "Analytics tools, hiring platforms, operations dashboards",
     price: "From NPR 60,000 | 2-3 week delivery",
   },
   {
@@ -48,37 +50,37 @@ const services = [
 
 const caseStudies = [
   {
-    title: "AI-Driven Job Platform",
-    subtitle: "Interactive map and Kanban board for hospitality sector",
+    title: "LocoXperts",
+    subtitle: "Solo-built MTB trail discovery, expert booking, and event PWA for Nepal",
     results: [
-      "Served 30,000+ monthly active users",
-      "Reduced bounce rates through Core Web Vitals optimization",
-      "Built reusable component library cutting delivery time 40%",
-      "Improved CI/CD pipeline reducing deployment time 50%",
+      "Built 200+ commits independently across frontend, backend, auth, database, PWA, and deployment",
+      "Implemented GPX trail uploads, MapLibre/Mapbox maps, event booking, QR check-ins, and expert workflows",
+      "Designed Google OAuth, Firebase phone OTP, JWT RBAC, admin review flows, and transactional emails",
+      "Integrated AI-generated trail descriptions with production retry logic",
     ],
-    tech: ["React", "Next.js", "TypeScript", "MapboxGL", "React Query", "GitHub Copilot"],
+    tech: ["Next.js", "TypeScript", "PostgreSQL", "Neon", "MapLibre GL", "Firebase", "Codex"],
   },
   {
-    title: "Real-Time Analytics Dashboard",
-    subtitle: "SaaS analytics platform for mobile app insights",
+    title: "Restworld",
+    subtitle: "Hiring platform serving 30,000+ monthly active users across Italy",
     results: [
-      "Built custom SVG funnel visualization tool (eliminated costly plugins)",
-      "Delivered real-time tables, charts, and heatmaps",
-      "Integrated GraphQL + Elixir for streaming analytics",
-      "Implemented comprehensive event tracking with Datadog",
+      "Contributed 4,775 frontend commits and 437 backend commits across React/Next.js and Elixir/Phoenix",
+      "Built Mapbox job explorer with Web Worker clustering, proximity filters, and debounced performance work",
+      "Maintained design system library with reusable components, tokens, skeleton loaders, and Storybook",
+      "Built worker, employer, billing, subscription, and DynamoDB URL shortener features",
     ],
-    tech: ["React.js", "Next.js", "HighCharts", "SVG", "GraphQL", "MongoDB"],
+    tech: ["Next.js", "React", "TypeScript", "Elixir", "Phoenix", "Mapbox", "DynamoDB"],
   },
   {
-    title: "Component Library and Design System",
-    subtitle: "Reusable UI library for fast-scaling SaaS platform",
+    title: "UXCam",
+    subtitle: "Complex analytics visualizations for mobile product insight dashboards",
     results: [
-      "Cut UI defects by 60% with standardized components",
-      "Accelerated feature delivery by 40%",
-      "Mentored 4 engineers to deliver consistent UIs",
-      "Created Storybook docs for 50+ components",
+      "Primary engineer on Screen Flow and Sunburst graph systems spanning 250+ file changes",
+      "Built custom SVG funnel visualization without a third-party dependency",
+      "Improved heatmap tooltips, browser fixes, image overlays, and interactive data layers",
+      "Designed mega-filter caching and dynamic GraphQL/Elixir filter data structures",
     ],
-    tech: ["React", "TypeScript", "Storybook", "Tailwind", "Monorepo (NX)"],
+    tech: ["React", "TypeScript", "GraphQL", "Elixir Phoenix", "SVG", "Highcharts", "Datadog"],
   },
 ];
 
@@ -87,19 +89,19 @@ const accelerationPoints = [
     icon: "⚡",
     title: "Component Generation",
     description:
-      "AI generates initial React components from requirements. I review, refactor, and optimize for production.",
+      "Codex, Claude, Gemini, and Copilot accelerate scaffolding while I keep architecture, review, and production quality human-owned.",
   },
   {
     icon: "🎨",
-    title: "Design to Code",
+    title: "Product Automation",
     description:
-      "GPT-4 Vision converts Figma designs to React. I add interactions, accessibility, and polish.",
+      "AI model APIs power useful product workflows, including LocoXperts trail description generation with retry handling.",
   },
   {
     icon: "🧪",
     title: "Test Generation",
     description:
-      "AI suggests test cases and generates boilerplate. I ensure coverage and edge cases.",
+      "AI speeds up boilerplate and test exploration; I verify edge cases with Vitest, Jest, Testing Library, and production checks.",
   },
 ];
 
@@ -133,14 +135,13 @@ export default function HomePage() {
 
       <section className="mx-auto w-full max-w-[1200px] px-4 pb-12 pt-12 sm:px-6 sm:pt-16 lg:px-10 lg:pt-20">
         <div className="space-y-6 text-center">
-          <p className="mono-label">AI-accelerated frontend engineering</p>
+          <p className="mono-label">Senior full-stack engineer · frontend specialist</p>
           <h1 className="mx-auto max-w-4xl text-balance text-3xl font-semibold leading-tight tracking-[-0.04em] sm:text-4xl lg:text-6xl">
-            Build Dashboards 10x Faster with AI-Accelerated Development
+            Dibyan Maharjan builds full-stack products, data-heavy interfaces, and AI-augmented workflows.
           </h1>
           <p className="mx-auto max-w-3xl text-pretty text-base text-[var(--muted)] sm:text-lg">
-            Senior Frontend Engineer specializing in React/Next.js and AI automation. I help SaaS teams
-            integrate Codex, Gemini, Claude, and GPT workflows and ship production-ready code in days,
-            not weeks.
+            7+ years across React, Next.js, TypeScript, Elixir/Phoenix, PostgreSQL, and production AI tooling.
+            Founder and solo engineer of LocoXperts, with shipped platform work at Restworld and UXCam.
           </p>
         </div>
 
@@ -223,7 +224,7 @@ export default function HomePage() {
         <div className="mx-auto w-full max-w-[1000px] px-4 py-12 sm:px-6 sm:py-16 lg:px-10">
           <p className="section-heading text-center">How AI Accelerates Development</p>
           <p className="mx-auto mt-4 max-w-2xl text-center text-sm text-[var(--muted)] sm:text-base">
-            I use Claude, Cursor, and Copilot to move faster while keeping engineering quality high.
+            I use Codex, Claude, Gemini, Cursor, and Copilot to move faster while keeping engineering quality high.
           </p>
 
           <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-3">
@@ -239,17 +240,17 @@ export default function HomePage() {
           </div>
 
           <div className="surface-card mt-6 border-2 border-[var(--accent)] text-center">
-            <p className="text-lg font-semibold tracking-tight">Traditional vs. AI-Accelerated Delivery</p>
+            <p className="text-lg font-semibold tracking-tight">Manual vs. AI-Assisted Delivery</p>
             <div className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2">
               <div>
-                <p className="text-sm text-[var(--muted)]">Dashboard Project</p>
-                <p className="text-2xl font-semibold">2-3 weeks</p>
-                <p className="text-sm text-[var(--muted)]">Manual coding</p>
+                <p className="text-sm text-[var(--muted)]">Feature Scaffold</p>
+                <p className="text-2xl font-semibold">Days</p>
+                <p className="text-sm text-[var(--muted)]">Manual setup and boilerplate</p>
               </div>
               <div>
-                <p className="text-sm text-[var(--muted)]">With AI Acceleration</p>
-                <p className="text-2xl font-semibold text-[var(--accent)]">1-2 days</p>
-                <p className="text-sm text-[var(--muted)]">Same quality, 70% less time</p>
+                <p className="text-sm text-[var(--muted)]">With AI-Assisted Workflow</p>
+                <p className="text-2xl font-semibold text-[var(--accent)]">Faster cycles</p>
+                <p className="text-sm text-[var(--muted)]">More time for architecture, security, and polish</p>
               </div>
             </div>
           </div>
@@ -257,9 +258,9 @@ export default function HomePage() {
       </section>
 
       <section className="mx-auto w-full max-w-[1200px] px-4 py-12 text-center sm:px-6 sm:py-16 lg:px-10">
-        <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">Ready to Build Faster?</h2>
+        <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">Ready to Build a Serious Product?</h2>
         <p className="mx-auto mt-3 max-w-xl text-base text-[var(--muted)] sm:text-lg">
-          Let&apos;s discuss your project and define a fast, reliable delivery plan.
+          Let&apos;s define the product, stack, delivery plan, and AI-assisted workflow that fits your constraints.
         </p>
 
         <a
@@ -275,6 +276,9 @@ export default function HomePage() {
           </a>
           <a href="https://github.com/dibyansoftwaredev" target="_blank" rel="noreferrer" className="inline-link">
             GitHub
+          </a>
+          <a href="https://locoxperts.com" target="_blank" rel="noreferrer" className="inline-link">
+            LocoXperts
           </a>
           <span>Kathmandu, Nepal (NPT/UTC+5:45)</span>
         </div>
