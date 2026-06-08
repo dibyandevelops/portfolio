@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const techStack = [
@@ -15,6 +16,13 @@ const stats = [
   { number: "30,000+", label: "Monthly Users Served" },
   { number: "7+ Years", label: "Production Engineering" },
   { number: "5,000+", label: "Production Commits" },
+];
+
+const navLinks = [
+  { href: "#services", label: "Services" },
+  { href: "#work", label: "Work" },
+  { href: "#ai", label: "AI Workflow" },
+  { href: "/blogs", label: "Writing" },
 ];
 
 const services = [
@@ -114,8 +122,15 @@ export default function HomePage() {
             <span className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-[var(--stroke)] bg-[#fffdf8] text-xs font-bold tracking-[0.08em] text-[var(--ink)]">
               DM
             </span>
-            <p className="text-sm font-semibold tracking-tight">Dibyan Maharjan</p>
+            <p className="text-sm font-semibold">Dibyan Maharjan</p>
           </div>
+          <nav className="hidden items-center gap-5 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--muted)] lg:flex">
+            {navLinks.map((item) => (
+              <Link key={item.href} href={item.href} className="transition hover:text-[var(--ink)]">
+                {item.label}
+              </Link>
+            ))}
+          </nav>
           <div className="flex items-center gap-2 sm:gap-3">
             <Link
               href="/resume"
@@ -133,51 +148,100 @@ export default function HomePage() {
         </div>
       </header>
 
-      <section className="mx-auto w-full max-w-[1200px] px-4 pb-12 pt-12 sm:px-6 sm:pt-16 lg:px-10 lg:pt-20">
-        <div className="space-y-6 text-center">
-          <p className="mono-label">Senior full-stack engineer · frontend specialist</p>
-          <h1 className="mx-auto max-w-4xl text-balance text-3xl font-semibold leading-tight tracking-[-0.04em] sm:text-4xl lg:text-6xl">
-            Dibyan Maharjan builds full-stack products, data-heavy interfaces, and AI-augmented workflows.
-          </h1>
-          <p className="mx-auto max-w-3xl text-pretty text-base text-[var(--muted)] sm:text-lg">
-            7+ years across React, Next.js, TypeScript, Elixir/Phoenix, PostgreSQL, and production AI tooling.
-            Founder and solo engineer of LocoXperts, with shipped platform work at Restworld and UXCam.
-          </p>
-        </div>
-
-        <div className="mt-8 flex flex-wrap justify-center gap-2 sm:mt-10 sm:gap-3">
-          {techStack.map((tech) => (
-            <span
-              key={tech}
-              className="rounded-full border border-[var(--stroke)] bg-[#fffdf8] px-3 py-1.5 text-xs font-medium text-[var(--muted)] sm:text-sm"
-            >
-              {tech}
-            </span>
-          ))}
-        </div>
-
-        <div className="mt-8 grid grid-cols-1 gap-3 sm:mt-12 sm:grid-cols-3 sm:gap-4">
-          {stats.map((stat) => (
-            <div key={stat.label} className="surface-card text-center sm:text-left">
-              <p className="text-3xl font-semibold tracking-tight text-[var(--ink)]">{stat.number}</p>
-              <p className="mono-label mt-1">{stat.label}</p>
+      <section className="relative overflow-hidden border-b border-[var(--stroke)] bg-[#fffdf8]">
+        <div className="absolute inset-y-0 right-0 hidden w-[42%] bg-[var(--ink)] lg:block" />
+        <div className="mx-auto grid min-h-[calc(100vh-73px)] w-full max-w-[1200px] items-center gap-10 px-4 py-10 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-10 lg:py-16">
+          <div className="relative z-10 space-y-7">
+            <p className="mono-label">Senior full-stack engineer · frontend specialist</p>
+            <div className="space-y-5">
+              <h1 className="max-w-4xl text-balance text-4xl font-semibold leading-[1.05] sm:text-5xl lg:text-6xl">
+                Dibyan Maharjan builds production products from interface to infrastructure.
+              </h1>
+              <p className="max-w-2xl text-pretty text-base text-[var(--muted)] sm:text-lg">
+                7+ years across React, Next.js, TypeScript, Elixir/Phoenix, PostgreSQL, maps,
+                analytics dashboards, and production AI tooling. Founder and solo engineer of
+                LocoXperts, with shipped platform work at Restworld and UXCam.
+              </p>
             </div>
-          ))}
+
+            <div className="flex flex-col gap-3 sm:flex-row">
+              <a
+                href="mailto:dibyan.softwaredev@gmail.com?subject=Product Engineering Inquiry"
+                className="inline-flex justify-center rounded-full bg-[var(--ink)] px-6 py-3 text-sm font-semibold uppercase tracking-[0.14em] !text-white visited:!text-white hover:!text-white focus:!text-white active:!text-white transition hover:bg-[#111111]"
+              >
+                Start a Build
+              </a>
+              <Link
+                href="https://locoxperts.com"
+                target="_blank"
+                className="inline-flex justify-center rounded-full border border-[var(--stroke)] bg-[var(--sand)] px-6 py-3 text-sm font-semibold uppercase tracking-[0.14em] text-[var(--ink)] transition hover:border-[var(--ink)]"
+              >
+                View LocoXperts
+              </Link>
+            </div>
+
+            <div className="flex flex-wrap gap-2 pt-2">
+              {techStack.map((tech) => (
+                <span
+                  key={tech}
+                  className="rounded-full border border-[var(--stroke)] bg-[var(--sand)] px-3 py-1.5 text-xs font-medium text-[var(--muted)] sm:text-sm"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div className="relative z-10">
+            <div className="mx-auto max-w-sm overflow-hidden rounded-lg border border-[var(--stroke)] bg-[var(--sand)] shadow-[var(--shadow)] lg:max-w-md">
+              <div className="relative aspect-[4/5]">
+                <Image
+                  src="/DIBYAN_PP_PHOTO-removebg.jpg"
+                  alt="Dibyan Maharjan"
+                  fill
+                  priority
+                  sizes="(min-width: 1024px) 420px, 80vw"
+                  className="object-cover object-top"
+                />
+              </div>
+              <div className="grid grid-cols-3 border-t border-[var(--stroke)] bg-[#fffdf8]">
+                {stats.map((stat) => (
+                  <div key={stat.label} className="border-r border-[var(--stroke)] p-3 last:border-r-0 sm:p-4">
+                    <p className="text-xl font-semibold sm:text-2xl">{stat.number}</p>
+                    <p className="mt-1 text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">
+                      {stat.label}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section className="border-y border-[var(--stroke)] bg-[#efe7d7]/35">
+      <section id="services" className="border-b border-[var(--stroke)] bg-[#efe7d7]/35">
         <div className="mx-auto w-full max-w-[1200px] px-4 py-12 sm:px-6 sm:py-16 lg:px-10">
-          <p className="section-heading">Services</p>
-          <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4">
+          <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
+            <div>
+              <p className="section-heading">Services</p>
+              <h2 className="max-w-2xl text-3xl font-semibold leading-tight sm:text-4xl">
+                Focused offers for teams that need production software, not just screens.
+              </h2>
+            </div>
+            <p className="max-w-sm text-sm text-[var(--muted)]">
+              Pricing is scoped for Nepal-market budgets and can adjust by product risk, timeline, and ownership.
+            </p>
+          </div>
+
+          <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4">
             {services.map((service) => (
-              <article key={service.title} className="surface-card h-full space-y-3">
-                <h3 className="text-xl font-semibold tracking-tight">{service.title}</h3>
+              <article key={service.title} className="flex min-h-[280px] flex-col rounded-lg border border-[var(--stroke)] bg-[#fffdf8] p-5 shadow-[var(--shadow)]">
+                <h3 className="text-xl font-semibold leading-tight">{service.title}</h3>
                 <p className="text-sm text-[var(--muted)] sm:text-base">{service.description}</p>
-                <p className="text-sm text-[var(--muted)]">
+                <p className="mt-3 text-sm text-[var(--muted)]">
                   <strong className="text-[var(--ink)]">Perfect for:</strong> {service.perfectFor}
                 </p>
-                <p className="pt-2 text-sm font-semibold uppercase tracking-[0.14em] text-[var(--accent)]">
+                <p className="mt-auto pt-5 text-sm font-semibold uppercase tracking-[0.14em] text-[var(--accent)]">
                   {service.price}
                 </p>
               </article>
@@ -186,13 +250,23 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="mx-auto w-full max-w-[1200px] px-4 py-12 sm:px-6 sm:py-16 lg:px-10">
-        <p className="section-heading">Case Studies</p>
-        <div className="mt-6 grid grid-cols-1 gap-5 lg:grid-cols-3">
+      <section id="work" className="mx-auto w-full max-w-[1200px] px-4 py-12 sm:px-6 sm:py-16 lg:px-10">
+        <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
+          <div>
+            <p className="section-heading">Case Studies</p>
+            <h2 className="max-w-2xl text-3xl font-semibold leading-tight sm:text-4xl">
+              Three product contexts, one through-line: ownership from system design to delivery.
+            </h2>
+          </div>
+          <Link href="/projects" className="inline-link text-sm font-semibold uppercase tracking-[0.25em]">
+            All projects
+          </Link>
+        </div>
+        <div className="mt-8 grid grid-cols-1 gap-5 lg:grid-cols-3">
           {caseStudies.map((study) => (
-            <article key={study.title} className="overflow-hidden rounded-[24px] border border-[var(--stroke)] bg-[#fffdf8] shadow-[var(--shadow)]">
+            <article key={study.title} className="overflow-hidden rounded-lg border border-[var(--stroke)] bg-[#fffdf8] shadow-[var(--shadow)]">
               <div className="bg-[var(--ink)] p-5 text-[var(--sand)]">
-                <h3 className="text-xl font-semibold tracking-tight">{study.title}</h3>
+                <h3 className="text-xl font-semibold">{study.title}</h3>
                 <p className="mt-1 text-sm text-[var(--sand)]/80">{study.subtitle}</p>
               </div>
               <div className="space-y-4 p-5">
@@ -220,7 +294,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="border-y border-[var(--stroke)] bg-[#fffdf8]">
+      <section id="ai" className="border-y border-[var(--stroke)] bg-[#fffdf8]">
         <div className="mx-auto w-full max-w-[1000px] px-4 py-12 sm:px-6 sm:py-16 lg:px-10">
           <p className="section-heading text-center">How AI Accelerates Development</p>
           <p className="mx-auto mt-4 max-w-2xl text-center text-sm text-[var(--muted)] sm:text-base">
@@ -240,7 +314,7 @@ export default function HomePage() {
           </div>
 
           <div className="surface-card mt-6 border-2 border-[var(--accent)] text-center">
-            <p className="text-lg font-semibold tracking-tight">Manual vs. AI-Assisted Delivery</p>
+            <p className="text-lg font-semibold">Manual vs. AI-Assisted Delivery</p>
             <div className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2">
               <div>
                 <p className="text-sm text-[var(--muted)]">Feature Scaffold</p>
@@ -258,7 +332,7 @@ export default function HomePage() {
       </section>
 
       <section className="mx-auto w-full max-w-[1200px] px-4 py-12 text-center sm:px-6 sm:py-16 lg:px-10">
-        <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">Ready to Build a Serious Product?</h2>
+        <h2 className="text-3xl font-semibold sm:text-4xl">Ready to Build a Serious Product?</h2>
         <p className="mx-auto mt-3 max-w-xl text-base text-[var(--muted)] sm:text-lg">
           Let&apos;s define the product, stack, delivery plan, and AI-assisted workflow that fits your constraints.
         </p>
