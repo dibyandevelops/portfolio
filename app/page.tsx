@@ -1,190 +1,160 @@
-import Image from "next/image";
 import Link from "next/link";
 
 const techStack = [
-  "React & Next.js",
+  "React",
+  "Next.js",
   "TypeScript",
   "Elixir/Phoenix",
   "PostgreSQL",
+  "Mapbox",
   "OpenAI Codex",
   "Claude",
-  "Google Gemini",
-  "GitHub Copilot",
+  "Gemini",
 ];
 
 const stats = [
-  { number: "30,000+", label: "Monthly Users Served" },
-  { number: "7+ Years", label: "Production Engineering" },
-  { number: "5,000+", label: "Production Commits" },
+  { number: "7+", label: "Years building production software" },
+  { number: "5,000+", label: "Commits across shipped codebases" },
+  { number: "30,000+", label: "Monthly users served at Restworld" },
+];
+
+const services = [
+  {
+    title: "Full-stack product build",
+    description:
+      "Next.js products with auth, APIs, database design, deployment, analytics, and observability.",
+    price: "From NPR 90,000",
+    timeline: "3-5 weeks",
+  },
+  {
+    title: "AI-assisted feature delivery",
+    description:
+      "Codex, Claude, Gemini, and Copilot workflows for faster scaffolding, tests, refactors, and product automation.",
+    price: "From NPR 175,000",
+    timeline: "5-8 weeks",
+  },
+  {
+    title: "Frontend systems and dashboards",
+    description:
+      "Data-heavy React interfaces, maps, design systems, forms, and analytics dashboards.",
+    price: "From NPR 60,000",
+    timeline: "2-3 weeks",
+  },
+  {
+    title: "Performance and technical audit",
+    description:
+      "Focused review of Core Web Vitals, rendering, API calls, accessibility, and delivery risks.",
+    price: "From NPR 45,000",
+    timeline: "2-4 weeks",
+  },
+];
+
+const selectedWork = [
+  {
+    title: "LocoXperts",
+    meta: "Founder-built PWA for Nepal",
+    detail:
+      "Trail discovery, expert booking, events, QR check-ins, Firebase OTP, JWT RBAC, GPX uploads, MapLibre maps, and AI trail descriptions.",
+    tags: ["Next.js", "PostgreSQL", "MapLibre", "Firebase", "Codex"],
+  },
+  {
+    title: "Restworld",
+    meta: "30,000+ monthly active users",
+    detail:
+      "Interactive job map explorer, design system, worker and employer workflows, Elixir/Phoenix APIs, and DynamoDB URL shortener.",
+    tags: ["React", "Next.js", "Elixir", "Phoenix", "Mapbox"],
+  },
+  {
+    title: "UXCam",
+    meta: "Analytics dashboards and custom SVG systems",
+    detail:
+      "Screen Flow, Sunburst, heatmaps, custom funnel visualization, GraphQL filter architecture, and large dataset performance work.",
+    tags: ["React", "GraphQL", "SVG", "Highcharts", "Datadog"],
+  },
 ];
 
 const navLinks = [
   { href: "#services", label: "Services" },
   { href: "#work", label: "Work" },
-  { href: "#ai", label: "AI Workflow" },
+  { href: "#ai", label: "AI" },
   { href: "/blogs", label: "Writing" },
-];
-
-const services = [
-  {
-    title: "Full-Stack Product Development",
-    description:
-      "Production-ready Next.js products with APIs, authentication, database design, observability, and deployment handled end to end.",
-    perfectFor: "Founders, local platforms, SaaS MVPs, internal tools",
-    price: "From NPR 90,000 | 3-5 week delivery",
-  },
-  {
-    title: "AI-Assisted Feature Delivery",
-    description:
-      "Integrate Codex, Claude, Gemini, and GPT workflows into real product development for faster scaffolding, refactors, tests, and content generation.",
-    perfectFor: "Teams adopting AI tooling, product automation, content workflows",
-    price: "From NPR 175,000 | 5-8 week delivery",
-  },
-  {
-    title: "Frontend Systems & Dashboards",
-    description:
-      "React/Next.js dashboards, design systems, maps, forms, data visualizations, and performance-sensitive product interfaces.",
-    perfectFor: "Analytics tools, hiring platforms, operations dashboards",
-    price: "From NPR 60,000 | 2-3 week delivery",
-  },
-  {
-    title: "Performance Optimization",
-    description:
-      "Audit and optimize your React/Next.js apps for Core Web Vitals, SEO, and conversion improvements.",
-    perfectFor: "Slow websites, pre-fundraise tech diligence",
-    price: "From NPR 45,000 | 2-4 week delivery",
-  },
-];
-
-const caseStudies = [
-  {
-    title: "LocoXperts",
-    subtitle: "Solo-built MTB trail discovery, expert booking, and event PWA for Nepal",
-    results: [
-      "Built 200+ commits independently across frontend, backend, auth, database, PWA, and deployment",
-      "Implemented GPX trail uploads, MapLibre/Mapbox maps, event booking, QR check-ins, and expert workflows",
-      "Designed Google OAuth, Firebase phone OTP, JWT RBAC, admin review flows, and transactional emails",
-      "Integrated AI-generated trail descriptions with production retry logic",
-    ],
-    tech: ["Next.js", "TypeScript", "PostgreSQL", "Neon", "MapLibre GL", "Firebase", "Codex"],
-  },
-  {
-    title: "Restworld",
-    subtitle: "Hiring platform serving 30,000+ monthly active users across Italy",
-    results: [
-      "Contributed 4,775 frontend commits and 437 backend commits across React/Next.js and Elixir/Phoenix",
-      "Built Mapbox job explorer with Web Worker clustering, proximity filters, and debounced performance work",
-      "Maintained design system library with reusable components, tokens, skeleton loaders, and Storybook",
-      "Built worker, employer, billing, subscription, and DynamoDB URL shortener features",
-    ],
-    tech: ["Next.js", "React", "TypeScript", "Elixir", "Phoenix", "Mapbox", "DynamoDB"],
-  },
-  {
-    title: "UXCam",
-    subtitle: "Complex analytics visualizations for mobile product insight dashboards",
-    results: [
-      "Primary engineer on Screen Flow and Sunburst graph systems spanning 250+ file changes",
-      "Built custom SVG funnel visualization without a third-party dependency",
-      "Improved heatmap tooltips, browser fixes, image overlays, and interactive data layers",
-      "Designed mega-filter caching and dynamic GraphQL/Elixir filter data structures",
-    ],
-    tech: ["React", "TypeScript", "GraphQL", "Elixir Phoenix", "SVG", "Highcharts", "Datadog"],
-  },
-];
-
-const accelerationPoints = [
-  {
-    icon: "⚡",
-    title: "Component Generation",
-    description:
-      "Codex, Claude, Gemini, and Copilot accelerate scaffolding while I keep architecture, review, and production quality human-owned.",
-  },
-  {
-    icon: "🎨",
-    title: "Product Automation",
-    description:
-      "AI model APIs power useful product workflows, including LocoXperts trail description generation with retry handling.",
-  },
-  {
-    icon: "🧪",
-    title: "Test Generation",
-    description:
-      "AI speeds up boilerplate and test exploration; I verify edge cases with Vitest, Jest, Testing Library, and production checks.",
-  },
 ];
 
 export default function HomePage() {
   return (
-    <main className="bg-[var(--sand)] text-[var(--ink)]">
+    <main className="min-h-screen bg-[var(--sand)] text-[var(--ink)]">
       <header className="sticky top-0 z-50 border-b border-[var(--stroke)] bg-[var(--sand)]/95 backdrop-blur">
-        <div className="mx-auto flex w-full max-w-[1200px] items-center justify-between gap-3 px-4 py-4 sm:px-6 lg:px-10">
-          <div className="flex items-center gap-2.5">
-            <span className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-[var(--stroke)] bg-[#fffdf8] text-xs font-bold tracking-[0.08em] text-[var(--ink)]">
+        <div className="mx-auto flex w-full max-w-[1180px] items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
+          <Link href="/" className="flex items-center gap-2.5">
+            <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg border border-[var(--stroke)] bg-[#fffdf8] text-xs font-bold text-[var(--ink)]">
               DM
             </span>
-            <p className="text-sm font-semibold">Dibyan Maharjan</p>
-          </div>
-          <nav className="hidden items-center gap-5 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--muted)] lg:flex">
+            <span className="text-sm font-semibold">Dibyan Maharjan</span>
+          </Link>
+
+          <nav className="hidden items-center gap-5 text-xs font-semibold uppercase text-[var(--muted)] lg:flex">
             {navLinks.map((item) => (
               <Link key={item.href} href={item.href} className="transition hover:text-[var(--ink)]">
                 {item.label}
               </Link>
             ))}
           </nav>
-          <div className="flex items-center gap-2 sm:gap-3">
+
+          <div className="flex items-center gap-2">
             <Link
               href="/resume"
-              className="rounded-full border border-[var(--stroke)] px-3 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--muted)] transition hover:border-[var(--ink)] hover:text-[var(--ink)] sm:px-4"
+              className="rounded-full border border-[var(--stroke)] px-3 py-2 text-xs font-semibold uppercase text-[var(--muted)] transition hover:border-[var(--ink)] hover:text-[var(--ink)] sm:px-4"
             >
               Resume
             </Link>
             <a
-              href="mailto:dibyan.softwaredev@gmail.com"
-              className="rounded-full bg-[var(--ink)] px-3 py-2 text-xs font-semibold uppercase tracking-[0.16em] !text-white visited:!text-white hover:!text-white focus:!text-white active:!text-white transition hover:bg-[#111111] sm:px-4"
+              href="mailto:dibyan.softwaredev@gmail.com?subject=Product Engineering Inquiry"
+              className="rounded-full bg-[var(--ink)] px-3 py-2 text-xs font-semibold uppercase !text-white visited:!text-white hover:!text-white focus:!text-white active:!text-white transition hover:bg-[#111111] sm:px-4"
             >
-              Get in Touch
+              Contact
             </a>
           </div>
         </div>
       </header>
 
-      <section className="relative overflow-hidden border-b border-[var(--stroke)] bg-[#fffdf8]">
-        <div className="absolute inset-y-0 right-0 hidden w-[42%] bg-[var(--ink)] lg:block" />
-        <div className="mx-auto grid min-h-[calc(100vh-73px)] w-full max-w-[1200px] items-center gap-10 px-4 py-10 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-10 lg:py-16">
-          <div className="relative z-10 space-y-7">
-            <p className="mono-label">Senior full-stack engineer · frontend specialist</p>
+      <section className="border-b border-[var(--stroke)] bg-[#fffdf8]">
+        <div className="mx-auto grid w-full max-w-[1180px] gap-10 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-[minmax(0,1.4fr)_minmax(320px,0.6fr)] lg:px-8 lg:py-20">
+          <div className="space-y-7">
+            <div className="inline-flex rounded-full border border-[var(--stroke)] bg-[var(--sand)] px-3 py-1 text-xs font-semibold uppercase text-[var(--muted)]">
+              Senior full-stack engineer in Kathmandu
+            </div>
+
             <div className="space-y-5">
-              <h1 className="max-w-4xl text-balance text-4xl font-semibold leading-[1.05] sm:text-5xl lg:text-6xl">
-                Dibyan Maharjan builds production products from interface to infrastructure.
+              <h1 className="max-w-4xl text-4xl font-semibold leading-[1.05] sm:text-5xl lg:text-6xl">
+                I build product systems that connect interface, backend, data, and AI tooling.
               </h1>
-              <p className="max-w-2xl text-pretty text-base text-[var(--muted)] sm:text-lg">
-                7+ years across React, Next.js, TypeScript, Elixir/Phoenix, PostgreSQL, maps,
-                analytics dashboards, and production AI tooling. Founder and solo engineer of
-                LocoXperts, with shipped platform work at Restworld and UXCam.
+              <p className="max-w-2xl text-base text-[var(--muted)] sm:text-lg">
+                Founder and solo engineer of LocoXperts. Previously shipped platform work at
+                Restworld and analytics visualization systems at UXCam across React, Next.js,
+                TypeScript, Elixir/Phoenix, PostgreSQL, maps, and production AI workflows.
               </p>
             </div>
 
             <div className="flex flex-col gap-3 sm:flex-row">
               <a
                 href="mailto:dibyan.softwaredev@gmail.com?subject=Product Engineering Inquiry"
-                className="inline-flex justify-center rounded-full bg-[var(--ink)] px-6 py-3 text-sm font-semibold uppercase tracking-[0.14em] !text-white visited:!text-white hover:!text-white focus:!text-white active:!text-white transition hover:bg-[#111111]"
+                className="inline-flex justify-center rounded-full bg-[var(--ink)] px-6 py-3 text-sm font-semibold uppercase !text-white visited:!text-white hover:!text-white focus:!text-white active:!text-white transition hover:bg-[#111111]"
               >
                 Start a Build
               </a>
               <Link
-                href="https://locoxperts.com"
-                target="_blank"
-                className="inline-flex justify-center rounded-full border border-[var(--stroke)] bg-[var(--sand)] px-6 py-3 text-sm font-semibold uppercase tracking-[0.14em] text-[var(--ink)] transition hover:border-[var(--ink)]"
+                href="/projects"
+                className="inline-flex justify-center rounded-full border border-[var(--stroke)] bg-[var(--sand)] px-6 py-3 text-sm font-semibold uppercase text-[var(--ink)] transition hover:border-[var(--ink)]"
               >
-                View LocoXperts
+                See Work
               </Link>
             </div>
 
-            <div className="flex flex-wrap gap-2 pt-2">
+            <div className="flex flex-wrap gap-2">
               {techStack.map((tech) => (
                 <span
                   key={tech}
-                  className="rounded-full border border-[var(--stroke)] bg-[var(--sand)] px-3 py-1.5 text-xs font-medium text-[var(--muted)] sm:text-sm"
+                  className="rounded-full border border-[var(--stroke)] bg-[var(--sand)] px-3 py-1.5 text-xs font-medium text-[var(--muted)]"
                 >
                   {tech}
                 </span>
@@ -192,170 +162,119 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="relative z-10">
-            <div className="mx-auto max-w-sm overflow-hidden rounded-lg border border-[var(--stroke)] bg-[var(--sand)] shadow-[var(--shadow)] lg:max-w-md">
-              <div className="relative aspect-[4/5]">
-                <Image
-                  src="/DIBYAN_PP_PHOTO-removebg.jpg"
-                  alt="Dibyan Maharjan"
-                  fill
-                  priority
-                  sizes="(min-width: 1024px) 420px, 80vw"
-                  className="object-cover object-top"
-                />
-              </div>
-              <div className="grid grid-cols-3 border-t border-[var(--stroke)] bg-[#fffdf8]">
-                {stats.map((stat) => (
-                  <div key={stat.label} className="border-r border-[var(--stroke)] p-3 last:border-r-0 sm:p-4">
-                    <p className="text-xl font-semibold sm:text-2xl">{stat.number}</p>
-                    <p className="mt-1 text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">
-                      {stat.label}
-                    </p>
-                  </div>
-                ))}
-              </div>
+          <aside className="rounded-lg border border-[var(--stroke)] bg-[var(--sand)] p-5">
+            <p className="mono-label">Current focus</p>
+            <p className="mt-3 text-2xl font-semibold leading-tight">
+              LocoXperts, production AI workflows, maps, bookings, and full-stack product delivery.
+            </p>
+            <div className="mt-6 grid gap-3">
+              {stats.map((stat) => (
+                <div key={stat.label} className="border-t border-[var(--stroke)] pt-3">
+                  <p className="text-3xl font-semibold">{stat.number}</p>
+                  <p className="mt-1 text-sm text-[var(--muted)]">{stat.label}</p>
+                </div>
+              ))}
             </div>
-          </div>
+          </aside>
         </div>
       </section>
 
-      <section id="services" className="border-b border-[var(--stroke)] bg-[#efe7d7]/35">
-        <div className="mx-auto w-full max-w-[1200px] px-4 py-12 sm:px-6 sm:py-16 lg:px-10">
-          <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
+      <section id="services" className="border-b border-[var(--stroke)]">
+        <div className="mx-auto w-full max-w-[1180px] px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
+          <div className="grid gap-6 lg:grid-cols-[0.8fr_1.2fr]">
             <div>
               <p className="section-heading">Services</p>
-              <h2 className="max-w-2xl text-3xl font-semibold leading-tight sm:text-4xl">
-                Focused offers for teams that need production software, not just screens.
+              <h2 className="text-3xl font-semibold leading-tight sm:text-4xl">
+                Practical delivery offers with clear scope and Nepal-market pricing.
               </h2>
             </div>
-            <p className="max-w-sm text-sm text-[var(--muted)]">
-              Pricing is scoped for Nepal-market budgets and can adjust by product risk, timeline, and ownership.
-            </p>
-          </div>
-
-          <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4">
-            {services.map((service) => (
-              <article key={service.title} className="flex min-h-[280px] flex-col rounded-lg border border-[var(--stroke)] bg-[#fffdf8] p-5 shadow-[var(--shadow)]">
-                <h3 className="text-xl font-semibold leading-tight">{service.title}</h3>
-                <p className="text-sm text-[var(--muted)] sm:text-base">{service.description}</p>
-                <p className="mt-3 text-sm text-[var(--muted)]">
-                  <strong className="text-[var(--ink)]">Perfect for:</strong> {service.perfectFor}
-                </p>
-                <p className="mt-auto pt-5 text-sm font-semibold uppercase tracking-[0.14em] text-[var(--accent)]">
-                  {service.price}
-                </p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="work" className="mx-auto w-full max-w-[1200px] px-4 py-12 sm:px-6 sm:py-16 lg:px-10">
-        <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
-          <div>
-            <p className="section-heading">Case Studies</p>
-            <h2 className="max-w-2xl text-3xl font-semibold leading-tight sm:text-4xl">
-              Three product contexts, one through-line: ownership from system design to delivery.
-            </h2>
-          </div>
-          <Link href="/projects" className="inline-link text-sm font-semibold uppercase tracking-[0.25em]">
-            All projects
-          </Link>
-        </div>
-        <div className="mt-8 grid grid-cols-1 gap-5 lg:grid-cols-3">
-          {caseStudies.map((study) => (
-            <article key={study.title} className="overflow-hidden rounded-lg border border-[var(--stroke)] bg-[#fffdf8] shadow-[var(--shadow)]">
-              <div className="bg-[var(--ink)] p-5 text-[var(--sand)]">
-                <h3 className="text-xl font-semibold">{study.title}</h3>
-                <p className="mt-1 text-sm text-[var(--sand)]/80">{study.subtitle}</p>
-              </div>
-              <div className="space-y-4 p-5">
-                <ul className="space-y-2 text-sm text-[var(--muted)]">
-                  {study.results.map((result) => (
-                    <li key={result} className="flex items-start gap-2">
-                      <span className="mt-0.5 text-[#2f855a]">✓</span>
-                      <span>{result}</span>
-                    </li>
-                  ))}
-                </ul>
-                <div className="flex flex-wrap gap-2">
-                  {study.tech.map((tech) => (
-                    <span
-                      key={tech}
-                      className="rounded-full border border-[var(--stroke)] bg-[#efe7d7] px-2.5 py-1 text-xs text-[#4c4333]"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section id="ai" className="border-y border-[var(--stroke)] bg-[#fffdf8]">
-        <div className="mx-auto w-full max-w-[1000px] px-4 py-12 sm:px-6 sm:py-16 lg:px-10">
-          <p className="section-heading text-center">How AI Accelerates Development</p>
-          <p className="mx-auto mt-4 max-w-2xl text-center text-sm text-[var(--muted)] sm:text-base">
-            I use Codex, Claude, Gemini, Cursor, and Copilot to move faster while keeping engineering quality high.
-          </p>
-
-          <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-3">
-            {accelerationPoints.map((point) => (
-              <article key={point.title} className="surface-card text-center">
-                <p className="text-4xl" aria-hidden="true">
-                  {point.icon}
-                </p>
-                <h3 className="mt-2 text-lg font-semibold">{point.title}</h3>
-                <p className="mt-2 text-sm text-[var(--muted)]">{point.description}</p>
-              </article>
-            ))}
-          </div>
-
-          <div className="surface-card mt-6 border-2 border-[var(--accent)] text-center">
-            <p className="text-lg font-semibold">Manual vs. AI-Assisted Delivery</p>
-            <div className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2">
-              <div>
-                <p className="text-sm text-[var(--muted)]">Feature Scaffold</p>
-                <p className="text-2xl font-semibold">Days</p>
-                <p className="text-sm text-[var(--muted)]">Manual setup and boilerplate</p>
-              </div>
-              <div>
-                <p className="text-sm text-[var(--muted)]">With AI-Assisted Workflow</p>
-                <p className="text-2xl font-semibold text-[var(--accent)]">Faster cycles</p>
-                <p className="text-sm text-[var(--muted)]">More time for architecture, security, and polish</p>
-              </div>
+            <div className="grid gap-3 sm:grid-cols-2">
+              {services.map((service) => (
+                <article key={service.title} className="rounded-lg border border-[var(--stroke)] bg-[#fffdf8] p-5">
+                  <h3 className="text-xl font-semibold leading-tight">{service.title}</h3>
+                  <p className="mt-3 text-sm text-[var(--muted)]">{service.description}</p>
+                  <div className="mt-5 flex flex-wrap items-center justify-between gap-3 border-t border-[var(--stroke)] pt-4 text-sm">
+                    <span className="font-semibold text-[var(--accent)]">{service.price}</span>
+                    <span className="text-[var(--muted)]">{service.timeline}</span>
+                  </div>
+                </article>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      <section className="mx-auto w-full max-w-[1200px] px-4 py-12 text-center sm:px-6 sm:py-16 lg:px-10">
-        <h2 className="text-3xl font-semibold sm:text-4xl">Ready to Build a Serious Product?</h2>
-        <p className="mx-auto mt-3 max-w-xl text-base text-[var(--muted)] sm:text-lg">
-          Let&apos;s define the product, stack, delivery plan, and AI-assisted workflow that fits your constraints.
-        </p>
+      <section id="work" className="bg-[#fffdf8]">
+        <div className="mx-auto w-full max-w-[1180px] px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
+          <div className="flex flex-col justify-between gap-4 border-b border-[var(--stroke)] pb-6 md:flex-row md:items-end">
+            <div>
+              <p className="section-heading">Selected Work</p>
+              <h2 className="max-w-2xl text-3xl font-semibold leading-tight sm:text-4xl">
+                Real shipped systems, not portfolio placeholders.
+              </h2>
+            </div>
+            <Link href="/projects" className="inline-link text-sm font-semibold uppercase">
+              All projects
+            </Link>
+          </div>
 
+          <div className="divide-y divide-[var(--stroke)]">
+            {selectedWork.map((work) => (
+              <article key={work.title} className="grid gap-4 py-6 lg:grid-cols-[0.35fr_0.65fr]">
+                <div>
+                  <h3 className="text-2xl font-semibold">{work.title}</h3>
+                  <p className="mt-1 text-sm text-[var(--muted)]">{work.meta}</p>
+                </div>
+                <div>
+                  <p className="text-[var(--muted)]">{work.detail}</p>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {work.tags.map((tag) => (
+                      <span key={tag} className="tag-chip">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="ai" className="border-y border-[var(--stroke)]">
+        <div className="mx-auto grid w-full max-w-[1180px] gap-6 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
+          <div>
+            <p className="section-heading">AI Workflow</p>
+            <h2 className="text-3xl font-semibold leading-tight sm:text-4xl">
+              AI speeds up execution. Engineering judgment still owns the system.
+            </h2>
+          </div>
+          <div className="grid gap-3">
+            {[
+              "Use Codex, Claude, Gemini, Cursor, and Copilot for scaffolding, refactors, tests, and repetitive implementation.",
+              "Keep security, database design, auth boundaries, architecture, and production review human-owned.",
+              "Apply AI inside products where it creates real value, such as LocoXperts trail description generation.",
+            ].map((item) => (
+              <p key={item} className="rounded-lg border border-[var(--stroke)] bg-[#fffdf8] p-4 text-[var(--muted)]">
+                {item}
+              </p>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto w-full max-w-[1180px] px-4 py-12 text-center sm:px-6 sm:py-16 lg:px-8">
+        <h2 className="text-3xl font-semibold sm:text-4xl">Need a product engineer who can own the whole path?</h2>
+        <p className="mx-auto mt-3 max-w-xl text-base text-[var(--muted)] sm:text-lg">
+          Bring the product constraint, target users, and timeline. I will help shape the stack,
+          delivery plan, and first production release.
+        </p>
         <a
-          href="mailto:dibyan.softwaredev@gmail.com?subject=Consulting Inquiry"
-          className="mt-6 inline-flex rounded-full bg-[var(--ink)] px-6 py-3 text-sm font-semibold uppercase tracking-[0.14em] !text-white visited:!text-white hover:!text-white focus:!text-white active:!text-white transition hover:bg-[#111111]"
+          href="mailto:dibyan.softwaredev@gmail.com?subject=Product Engineering Inquiry"
+          className="mt-6 inline-flex rounded-full bg-[var(--ink)] px-6 py-3 text-sm font-semibold uppercase !text-white visited:!text-white hover:!text-white focus:!text-white active:!text-white transition hover:bg-[#111111]"
         >
           Email Me
         </a>
-
-        <div className="mt-6 flex flex-wrap items-center justify-center gap-4 text-sm text-[var(--muted)] sm:gap-6">
-          <a href="https://linkedin.com/in/dibyansoftwaredev" target="_blank" rel="noreferrer" className="inline-link">
-            LinkedIn
-          </a>
-          <a href="https://github.com/dibyansoftwaredev" target="_blank" rel="noreferrer" className="inline-link">
-            GitHub
-          </a>
-          <a href="https://locoxperts.com" target="_blank" rel="noreferrer" className="inline-link">
-            LocoXperts
-          </a>
-          <span>Kathmandu, Nepal (NPT/UTC+5:45)</span>
-        </div>
       </section>
     </main>
   );

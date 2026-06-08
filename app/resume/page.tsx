@@ -1,194 +1,193 @@
 import Link from "next/link";
-import { blogsData, experienceData } from "@/lib/data";
+import { blogsData, experienceData, projectsData } from "@/lib/data";
 
-const anchorLinks = [
-  { href: "#about", label: "About" },
-  { href: "#projects", label: "Work" },
-  { href: "#writing", label: "Writing" },
-  { href: "#experience", label: "Experience" },
-  { href: "#contact", label: "Contact" },
+const contactLinks = [
+  { label: "Email", href: "mailto:dibyan.softwaredev@gmail.com", value: "dibyan.softwaredev@gmail.com" },
+  { label: "LinkedIn", href: "https://linkedin.com/in/dibyansoftwaredev", value: "linkedin.com/in/dibyansoftwaredev" },
+  { label: "Product", href: "https://locoxperts.com", value: "locoxperts.com" },
+  { label: "Location", href: "#", value: "Kathmandu, Nepal" },
 ];
 
-const resourceLinks = [
-  { href: "/projects", label: "Project case studies", meta: "Architecture & delivery" },
-  { href: "/experience", label: "Resume snapshot", meta: "Teams, roles, impact" },
-  { href: "/blogs", label: "Notes & writing", meta: "Playbooks for teams" },
-  { href: "https://locoxperts.com", label: "LocoXperts", meta: "Founder-built product" },
-  { href: "mailto:dibyan.softwaredev@gmail.com", label: "Say hello", meta: "Consulting & collaborations" },
+const skillGroups = [
+  {
+    label: "Frontend",
+    value: "React, Next.js App Router, TypeScript, JavaScript, Tailwind CSS, TanStack Query, Redux, Zustand, Jotai",
+  },
+  {
+    label: "Architecture",
+    value: "NX/Lerna monorepos, SSR/ISR/SSG, design systems, Storybook, Core Web Vitals, PWA infrastructure",
+  },
+  {
+    label: "Backend",
+    value: "Elixir/Phoenix, Node.js/Express, PostgreSQL, MongoDB, DynamoDB, GraphQL, REST APIs",
+  },
+  {
+    label: "Auth and Infra",
+    value: "JWT, RBAC, Google OAuth, Firebase Phone OTP, Neon, Resend, Nodemailer, Vercel, Bitbucket Pipelines",
+  },
+  {
+    label: "AI and Tooling",
+    value: "OpenAI Codex, Claude, Gemini, Cursor, GitHub Copilot, agentic workflows, AI-assisted scaffolding",
+  },
+  {
+    label: "Observability",
+    value: "Sentry, Datadog, Mixpanel, Hotjar, Vercel Analytics, OpenReplay, Rollbar, Intercom",
+  },
 ];
 
-const highlightStats = [
-  { value: "7+ years", label: "Production engineering" },
-  { value: "5,000+", label: "Commits across production codebases" },
-  { value: "30,000+", label: "Monthly users served at Restworld" },
+const education = [
+  "B.Sc. in Computer Science and Information Technology (CSIT), Tribhuvan University, Institute of Engineering",
+  "Microservices with Node.js and React, Udemy",
+  "MERN Stack Front To Back: React, Redux and Node.js, Udemy",
 ];
 
 export default function ResumePage() {
+  const featuredProjects = projectsData.slice(0, 5);
   const recentPosts = blogsData.slice(0, 3);
-  const recentExperience = experienceData.slice(0, 2);
 
   return (
-    <main className="bg-[var(--sand)] text-[var(--ink)]">
-      <header className="section-shell space-y-10">
-        <div className="flex flex-wrap items-center justify-between gap-4">
-          <p className="mono-label">Dibyan Maharjan — senior full-stack engineer</p>
-          <div className="flex flex-wrap items-center gap-5">
-            <Link href="/" className="inline-link text-sm font-semibold uppercase tracking-[0.2em]">
-              Back to New Home
-            </Link>
-            <div className="nav-shell">
-            {anchorLinks.map((item) => (
-              <a key={item.href} href={item.href}>
-                {item.label}
+    <main className="min-h-screen bg-[#fffdf8] text-[var(--ink)]">
+      <header className="border-b-2 border-[var(--ink)] bg-[#fffdf8]">
+        <div className="mx-auto w-full max-w-[1120px] px-4 py-8 sm:px-6 lg:px-8">
+          <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+            <div>
+              <Link href="/" className="inline-link text-sm font-semibold uppercase text-[var(--muted)]">
+                Back to home
+              </Link>
+              <h1 className="mt-4 text-4xl font-bold uppercase leading-none sm:text-5xl">Dibyan Maharjan</h1>
+              <p className="mt-3 text-sm font-semibold uppercase text-[var(--muted)]">
+                Senior Full-Stack Engineer / Frontend Specialist / AI-Augmented Development
+              </p>
+            </div>
+            <a
+              href="mailto:dibyan.softwaredev@gmail.com?subject=Resume Inquiry"
+              className="inline-flex w-fit rounded-full bg-[var(--ink)] px-5 py-3 text-sm font-semibold uppercase !text-white visited:!text-white hover:!text-white focus:!text-white active:!text-white"
+            >
+              Contact
+            </a>
+          </div>
+
+          <div className="mt-6 grid gap-2 text-sm text-[var(--muted)] sm:grid-cols-2 lg:grid-cols-4">
+            {contactLinks.map((item) => (
+              <a key={item.label} href={item.href} className="border-t border-[var(--stroke)] pt-2 hover:text-[var(--ink)]">
+                <span className="block text-xs font-semibold uppercase text-[var(--ink)]">{item.label}</span>
+                {item.value}
               </a>
             ))}
-            </div>
-          </div>
-        </div>
-
-        <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,2.1fr)_minmax(0,1fr)]">
-          <div className="space-y-6">
-            <p className="text-xs uppercase tracking-[0.4em] text-[var(--muted)]">
-              Full-stack systems. Data-heavy interfaces. AI-augmented delivery.
-            </p>
-            <h1 className="text-4xl leading-tight tracking-[-0.05em] text-[var(--ink)] sm:text-5xl">
-              I build production products across React, Next.js, TypeScript, Elixir/Phoenix, PostgreSQL, and modern AI tooling.
-            </h1>
-            <p className="max-w-2xl text-lg text-[var(--muted)]">
-              Currently founder and solo engineer behind LocoXperts, a live MTB trail discovery and expert
-              booking PWA for Nepal. Previously shipped core platform work at Restworld and complex analytics
-              visualizations at UXCam.
-            </p>
-            <div className="flex flex-wrap gap-8 pt-4">
-              {highlightStats.map((stat) => (
-                <div key={stat.label}>
-                  <p className="text-3xl font-semibold tracking-tight">{stat.value}</p>
-                  <p className="mono-label mt-1">{stat.label}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="surface-card space-y-6">
-            <div className="space-y-2">
-              <p className="mono-label">Working on</p>
-              <p className="text-xl font-medium">LocoXperts, production AI workflows, maps, bookings, and full-stack product systems.</p>
-            </div>
-            <div>
-              {resourceLinks.map((item) => (
-                <a key={item.label} href={item.href} className="pill-link">
-                  <span>{item.label}</span>
-                  <span>{item.meta}</span>
-                </a>
-              ))}
-            </div>
           </div>
         </div>
       </header>
 
-      <section id="about" className="section-shell space-y-8">
-        <p className="section-heading">About</p>
-        <div className="grid gap-8 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)]">
-          <div className="surface-card is-quiet space-y-5">
-            <p>
-              I care about predictable releases, accessible UI systems, and shipping features that feel
-              effortless. My toolkit spans Next.js, TypeScript, Elixir/Phoenix, PostgreSQL, GraphQL,
-              maps, PWA infrastructure, observability, and AI-assisted development workflows.
+      <div className="mx-auto grid w-full max-w-[1120px] gap-8 px-4 py-8 sm:px-6 lg:grid-cols-[0.72fr_0.28fr] lg:px-8">
+        <div className="space-y-10">
+          <section className="space-y-3">
+            <p className="section-heading">Professional Summary</p>
+            <p className="text-lg leading-relaxed text-[var(--muted)]">
+              Senior full-stack engineer with 7+ years of experience and 5,000+ commits across
+              production codebases spanning React, Next.js, TypeScript, Elixir/Phoenix, PostgreSQL,
+              maps, analytics dashboards, and AI tooling. Founder and solo engineer behind LocoXperts,
+              after shipping core platform work for Restworld and complex visualization systems at UXCam.
             </p>
-            <p>
-              Beyond code, I design APIs and data models, own deployment details, mentor engineers,
-              and use Codex, Claude, Gemini, Cursor, and Copilot to move faster without lowering the bar.
-            </p>
-          </div>
-          <div className="surface-card space-y-4">
-            <p className="mono-label">Principles</p>
-            <ul className="list-reset space-y-3">
-              <li>• Own the system end to end, from UX to database</li>
-              <li>• Measure performance and product behavior before guessing</li>
-              <li>• Use AI for leverage, not as a substitute for engineering judgment</li>
-              <li>• Keep accessibility, security, and observability in the default path</li>
-            </ul>
-          </div>
-        </div>
-      </section>
+          </section>
 
-      <section id="writing" className="section-shell space-y-8">
-        <p className="section-heading">Writing</p>
-        <div className="space-y-4">
-          {recentPosts.map((post) => (
-            <Link href={`/blogs/${post.slug}`} key={post.slug} className="surface-card block space-y-2">
-              <p className="mono-label">
-                {new Date(post.publishedAt).toLocaleDateString("en-US", {
-                  month: "long",
-                  day: "numeric",
-                  year: "numeric",
-                })}{" "}
-                • {post.readTime} min read
-              </p>
-              <h3 className="text-2xl font-semibold tracking-tight">{post.title}</h3>
-              <p className="text-[var(--muted)]">{post.excerpt}</p>
-            </Link>
-          ))}
-          <Link href="/blogs" className="inline-link text-sm font-semibold uppercase tracking-[0.3em]">
-            View all articles
-          </Link>
-        </div>
-      </section>
-
-      <section id="experience" className="section-shell space-y-8">
-        <p className="section-heading">Experience</p>
-        <div className="space-y-6">
-          {recentExperience.map((experience) => (
-            <div key={experience.id} className="surface-card space-y-3">
-              <div className="flex flex-wrap items-center justify-between gap-3">
-                <div>
-                  <p className="text-2xl font-semibold">{experience.position}</p>
-                  <p className="text-base text-[var(--muted)]">{experience.company}</p>
-                </div>
-                <p className="mono-label text-right">
-                  {experience.duration}
-                  <br />
-                  {experience.location}
-                </p>
-              </div>
-              <p className="text-[var(--muted)]">{experience.description}</p>
-              <p className="text-sm uppercase tracking-[0.3em] text-[var(--muted)]">Highlights</p>
-              <ul className="list-reset space-y-2 text-sm">
-                {experience.achievements.slice(0, 2).map((achievement) => (
-                  <li key={achievement}>— {achievement}</li>
-                ))}
-              </ul>
+          <section id="experience" className="space-y-5">
+            <p className="section-heading">Experience</p>
+            <div className="space-y-6">
+              {experienceData.map((experience) => (
+                <article key={experience.id} className="border-t border-[var(--stroke)] pt-5">
+                  <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+                    <div>
+                      <h2 className="text-2xl font-semibold">{experience.position}</h2>
+                      <p className="text-[var(--muted)]">{experience.company} / {experience.location}</p>
+                    </div>
+                    <p className="text-sm font-semibold uppercase text-[var(--muted)]">{experience.duration}</p>
+                  </div>
+                  <p className="mt-3 text-[var(--muted)]">{experience.description}</p>
+                  <ul className="mt-4 space-y-2 text-sm text-[var(--muted)]">
+                    {experience.achievements.slice(0, 5).map((achievement) => (
+                      <li key={achievement}>- {achievement}</li>
+                    ))}
+                  </ul>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {experience.technologies.slice(0, 12).map((tech) => (
+                      <span key={tech} className="tag-chip">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </article>
+              ))}
             </div>
-          ))}
-        </div>
-        <Link href="/experience" className="inline-link text-sm font-semibold uppercase tracking-[0.3em]">
-          Full timeline
-        </Link>
-      </section>
+          </section>
 
-      <section id="contact" className="section-shell space-y-8">
-        <p className="section-heading">Contact</p>
-        <div className="surface-card space-y-4">
-          <p>
-            Available for full-stack product builds, React/Next.js systems, AI-assisted delivery workflows,
-            technical audits, and performance-focused consulting.
-          </p>
-          <div className="flex flex-wrap gap-6 text-sm">
-            <a href="https://www.linkedin.com/in/dibyansoftwaredev" className="inline-link" target="_blank" rel="noreferrer">
-              LinkedIn
-            </a>
-            <a href="https://github.com/dibyandevelops" className="inline-link" target="_blank" rel="noreferrer">
-              GitHub
-            </a>
-            <a href="https://locoxperts.com" className="inline-link" target="_blank" rel="noreferrer">
-              LocoXperts
-            </a>
-            <a href="mailto:dibyan.softwaredev@gmail.com" className="inline-link">
-              Email
-            </a>
-          </div>
+          <section className="space-y-5">
+            <p className="section-heading">Selected Projects</p>
+            <div className="grid gap-4 md:grid-cols-2">
+              {featuredProjects.map((project) => (
+                <article key={project.id} className="rounded-lg border border-[var(--stroke)] bg-[var(--sand)] p-4">
+                  <h2 className="text-xl font-semibold">{project.title}</h2>
+                  <p className="mt-2 text-sm text-[var(--muted)]">{project.description}</p>
+                  <p className="mt-3 text-xs font-semibold uppercase text-[var(--accent)]">
+                    {project.performance.score} / {project.performance.metrics}
+                  </p>
+                </article>
+              ))}
+            </div>
+          </section>
         </div>
-      </section>
+
+        <aside className="space-y-8 lg:border-l lg:border-[var(--stroke)] lg:pl-8">
+          <section className="space-y-3">
+            <p className="section-heading">Snapshot</p>
+            <div className="grid gap-3">
+              {[
+                ["7+ years", "Production engineering"],
+                ["5,000+", "Production commits"],
+                ["30,000+", "Monthly users served"],
+                ["200+", "Solo LocoXperts commits"],
+              ].map(([value, label]) => (
+                <div key={value} className="rounded-lg border border-[var(--stroke)] bg-[var(--sand)] p-4">
+                  <p className="text-2xl font-semibold">{value}</p>
+                  <p className="text-sm text-[var(--muted)]">{label}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section className="space-y-3">
+            <p className="section-heading">Technical Skills</p>
+            <div className="space-y-4">
+              {skillGroups.map((group) => (
+                <div key={group.label}>
+                  <p className="text-sm font-semibold uppercase">{group.label}</p>
+                  <p className="mt-1 text-sm text-[var(--muted)]">{group.value}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section className="space-y-3">
+            <p className="section-heading">Education & Certs</p>
+            <ul className="space-y-2 text-sm text-[var(--muted)]">
+              {education.map((item) => (
+                <li key={item}>- {item}</li>
+              ))}
+            </ul>
+          </section>
+
+          <section className="space-y-3">
+            <p className="section-heading">Recent Writing</p>
+            <div className="space-y-3">
+              {recentPosts.map((post) => (
+                <Link key={post.slug} href={`/blogs/${post.slug}`} className="block border-t border-[var(--stroke)] pt-3">
+                  <p className="text-sm font-semibold">{post.title}</p>
+                  <p className="mt-1 text-xs text-[var(--muted)]">{post.readTime} min read</p>
+                </Link>
+              ))}
+            </div>
+          </section>
+        </aside>
+      </div>
     </main>
   );
 }
