@@ -10,28 +10,28 @@ const contactLinks = [
 
 const skillGroups = [
   {
-    label: "Frontend",
-    value: "React, Next.js App Router, TypeScript, JavaScript, Tailwind CSS, TanStack Query, Redux, Zustand, Jotai",
+    label: "Products and apps",
+    value: "Clear solutions for booking, search, maps, dashboards, forms, and customer-facing screens",
   },
   {
-    label: "Architecture",
-    value: "NX/Lerna monorepos, SSR/ISR/SSG, design systems, Storybook, Core Web Vitals, PWA infrastructure",
+    label: "Business tools",
+    value: "Simple tools that solve daily problems around bookings, records, reports, listings, and internal work",
   },
   {
-    label: "Backend",
-    value: "Elixir/Phoenix, Node.js/Express, PostgreSQL, MongoDB, DynamoDB, GraphQL, REST APIs",
+    label: "Behind the scenes",
+    value: "Secure logins, databases, APIs, emails, file uploads, search, and role-based access",
   },
   {
-    label: "Auth and Infra",
-    value: "JWT, RBAC, Google OAuth, Firebase Phone OTP, Neon, Resend, Nodemailer, Vercel, Bitbucket Pipelines",
+    label: "Launch and support",
+    value: "Hosting, analytics, error tracking, speed checks, testing, and safe production releases",
   },
   {
-    label: "AI and Tooling",
-    value: "OpenAI Codex, Claude, Gemini, Cursor, GitHub Copilot, agentic workflows, AI-assisted scaffolding",
+    label: "AI help",
+    value: "OpenAI Codex, Claude, Gemini, Cursor, and Copilot for faster delivery and simple business automation",
   },
   {
-    label: "Observability",
-    value: "Sentry, Datadog, Mixpanel, Hotjar, Vercel Analytics, OpenReplay, Rollbar, Intercom",
+    label: "Technical stack",
+    value: "React, Next.js, TypeScript, PostgreSQL, Elixir/Phoenix, Tailwind CSS, Mapbox, Sentry, Vercel",
   },
 ];
 
@@ -56,7 +56,7 @@ export default function ResumePage() {
               </Link>
               <h1 className="mt-4 font-mono text-4xl font-bold uppercase leading-none sm:text-5xl">Dibyan Maharjan</h1>
               <p className="mt-3 text-sm font-semibold uppercase text-[var(--muted)]">
-                Senior Full-Stack Engineer / Frontend Specialist / AI-Augmented Development
+                Senior Web App Developer / Full-Stack Engineer / AI Tools
               </p>
             </div>
             <a
@@ -83,10 +83,10 @@ export default function ResumePage() {
           <section className="space-y-3">
             <p className="section-heading">Professional Summary</p>
             <p className="rounded-[1.5rem] border border-[var(--stroke)] bg-[var(--surface)] p-5 text-lg leading-relaxed text-[var(--muted)] shadow-[var(--shadow)]">
-              Senior full-stack engineer with 7+ years of experience and 5,000+ commits across
-              production codebases spanning React, Next.js, TypeScript, Elixir/Phoenix, PostgreSQL,
-              maps, analytics dashboards, and AI tooling. Founder and solo engineer behind LocoXperts,
-              after shipping core platform work for Restworld and complex visualization systems at UXCam.
+              I help startups and growing teams find practical solutions to real product problems.
+              I have 7+ years of experience building tools for bookings, maps, dashboards, admin
+              panels, and AI-assisted workflows. I am the founder and solo engineer behind LocoXperts,
+              and I have also worked on platforms used by thousands of people.
             </p>
           </section>
 
@@ -141,10 +141,10 @@ export default function ResumePage() {
             <p className="section-heading">Snapshot</p>
             <div className="grid gap-3">
               {[
-                ["7+ years", "Production engineering"],
-                ["5,000+", "Production commits"],
-                ["30,000+", "Monthly users served"],
-                ["200+", "Solo LocoXperts commits"],
+                ["7+ years", "Building apps and platforms"],
+                ["5,000+", "Code changes shipped"],
+                ["30,000+", "People used platforms I worked on"],
+                ["200+", "LocoXperts updates built solo"],
               ].map(([value, label]) => (
                 <div key={value} className="rounded-[1.5rem] border border-[var(--stroke)] bg-[var(--surface)] p-4">
                   <p className="text-2xl font-semibold">{value}</p>
@@ -155,7 +155,7 @@ export default function ResumePage() {
           </section>
 
           <section className="space-y-3 rounded-[1.5rem] border border-[var(--stroke)] bg-[var(--surface)] p-4">
-            <p className="section-heading">Technical Skills</p>
+            <p className="section-heading">What I Can Build</p>
             <div className="space-y-4">
               {skillGroups.map((group) => (
                 <div key={group.label}>

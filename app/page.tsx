@@ -2,49 +2,48 @@ import Image from "next/image";
 import Link from "next/link";
 
 const techStack = [
-  "React",
-  "Next.js",
-  "TypeScript",
-  "Elixir/Phoenix",
-  "PostgreSQL",
-  "Mapbox",
-  "OpenAI Codex",
-  "Claude",
-  "Gemini",
+  "Startup products",
+  "Problem solving",
+  "Booking tools",
+  "Admin dashboards",
+  "Maps",
+  "AI helpers",
+  "Fast loading",
+  "Mobile friendly",
 ];
 
 const stats = [
-  { number: "7+", label: "Years building production software" },
-  { number: "5,000+", label: "Commits across shipped codebases" },
-  { number: "30,000+", label: "Monthly users served at Restworld" },
+  { number: "7+", label: "Years building apps and platforms" },
+  { number: "5,000+", label: "Code changes shipped" },
+  { number: "30,000+", label: "People used platforms I worked on" },
 ];
 
 const services = [
   {
-    title: "Full-stack product build",
+    title: "Problem-to-product solution",
     description:
-      "Next.js products with auth, APIs, database design, deployment, analytics, and observability.",
+      "We start with the problem, choose the simplest useful solution, then build it from idea to launch.",
     price: "From NPR 90,000",
     timeline: "3-5 weeks",
   },
   {
-    title: "AI-assisted feature delivery",
+    title: "AI tools for your business",
     description:
-      "Codex, Claude, Gemini, and Copilot workflows for faster scaffolding, tests, refactors, and product automation.",
+      "Thoughtful AI workflows that reduce manual work, improve decisions, and fit safely into the way your team already operates.",
     price: "From NPR 175,000",
     timeline: "5-8 weeks",
   },
   {
-    title: "Frontend systems and dashboards",
+    title: "Dashboard and admin panel",
     description:
-      "Data-heavy React interfaces, maps, design systems, forms, and analytics dashboards.",
+      "A clear control panel that helps you understand customers, bookings, orders, events, reports, or business activity.",
     price: "From NPR 60,000",
     timeline: "2-3 weeks",
   },
   {
-    title: "Performance and technical audit",
+    title: "Product speed checkup",
     description:
-      "Focused review of Core Web Vitals, rendering, API calls, accessibility, and delivery risks.",
+      "I find what is slow, confusing, or blocking users, then fix the parts that hurt growth, trust, or sales.",
     price: "From NPR 45,000",
     timeline: "2-4 weeks",
   },
@@ -55,29 +54,29 @@ const selectedWork = [
     title: "LocoXperts",
     meta: "Founder-built PWA for Nepal",
     detail:
-      "Trail discovery, expert booking, events, QR check-ins, Firebase OTP, JWT RBAC, GPX uploads, MapLibre maps, and AI trail descriptions.",
-    tags: ["Next.js", "PostgreSQL", "MapLibre", "Firebase", "Codex"],
+      "A platform for mountain bike trails in Nepal. People can find trails, book experts, join events, and check in with QR codes.",
+    tags: ["Trail app", "Bookings", "Maps", "Events", "AI content"],
   },
   {
     title: "Restworld",
     meta: "30,000+ monthly active users",
     detail:
-      "Interactive job map explorer, design system, worker and employer workflows, Elixir/Phoenix APIs, and DynamoDB URL shortener.",
-    tags: ["React", "Next.js", "Elixir", "Phoenix", "Mapbox"],
+      "A hiring platform for restaurants. I helped build job search, maps, candidate tracking, and employer tools used by thousands of people.",
+    tags: ["Job search", "Maps", "Hiring tools", "Admin tools", "Large audience"],
   },
   {
     title: "UXCam",
     meta: "Analytics dashboards and custom SVG systems",
     detail:
-      "Screen Flow, Sunburst, heatmaps, custom funnel visualization, GraphQL filter architecture, and large dataset performance work.",
-    tags: ["React", "GraphQL", "SVG", "Highcharts", "Datadog"],
+      "Dashboards that helped app teams understand how users move through their apps, where they tap, and where they get stuck.",
+    tags: ["Dashboards", "Charts", "Heatmaps", "User insights", "Reports"],
   },
 ];
 
 const navLinks = [
   { href: "#services", label: "Services" },
   { href: "#work", label: "Work" },
-  { href: "#ai", label: "AI" },
+  { href: "#ai", label: "AI Help" },
   { href: "/blogs", label: "Writing" },
 ];
 
@@ -124,17 +123,16 @@ export default function HomePage() {
         <div className="mx-auto grid w-full max-w-[1180px] gap-8 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-[minmax(0,1.35fr)_minmax(320px,0.65fr)] lg:px-8 lg:py-20">
           <div className="space-y-7">
             <div className="hero-reveal inline-flex rounded-full border border-[var(--stroke)] bg-[var(--surface)] px-3 py-1 text-xs font-semibold uppercase text-[var(--muted)]">
-              ... / Full-stack engineer / Kathmandu / ...
+              ... / Products / Apps / Startups / Nepal / ...
             </div>
 
             <div className="hero-reveal-delay space-y-5">
               <h1 className="max-w-5xl font-mono text-5xl font-bold leading-[0.95] sm:text-7xl lg:text-8xl">
-                Full-stack Developer
+                I help startups find and build the right solution.
               </h1>
               <p className="max-w-2xl text-base text-[var(--muted)] sm:text-lg">
-                Founder and solo engineer of LocoXperts. Previously shipped platform work at
-                Restworld and analytics visualization systems at UXCam across React, Next.js,
-                TypeScript, Elixir/Phoenix, PostgreSQL, maps, and production AI workflows.
+                I work with founders who have a problem to solve, not just a feature list. I help
+                shape the idea, remove the noise, and build a clean product that people can use.
               </p>
             </div>
 
@@ -143,13 +141,13 @@ export default function HomePage() {
                 href="mailto:dibyan.softwaredev@gmail.com?subject=Product Engineering Inquiry"
                 className="inline-flex justify-center rounded-full bg-[var(--accent)] px-6 py-3 text-sm font-semibold uppercase !text-black visited:!text-black hover:!text-black focus:!text-black active:!text-black transition hover:opacity-80"
               >
-                Start a Build
+                Talk About My Project
               </a>
               <Link
                 href="/projects"
                 className="inline-flex justify-center rounded-full border border-[var(--stroke)] bg-transparent px-6 py-3 text-sm font-semibold uppercase text-[var(--ink)] transition hover:border-[var(--accent)]"
               >
-                See Work
+                See Examples
               </Link>
             </div>
 
@@ -178,12 +176,12 @@ export default function HomePage() {
               />
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent" />
               <p className="absolute bottom-4 left-4 right-4 font-mono text-sm font-semibold uppercase text-white">
-                Founder / Full-stack / AI workflows
+                Products / Apps / AI tools
               </p>
             </div>
             <p className="mono-label mt-5">Current focus</p>
             <p className="mt-3 text-2xl font-semibold leading-tight">
-              LocoXperts, production AI workflows, maps, bookings, and full-stack product delivery.
+              Finding simple solutions, then turning them into clear, fast, and useful products.
             </p>
             <div className="mt-6 grid gap-3">
               {stats.map((stat) => (
@@ -203,7 +201,7 @@ export default function HomePage() {
             <div>
               <p className="section-heading">Services</p>
               <h2 className="text-3xl font-semibold leading-tight sm:text-4xl">
-                Practical delivery offers with clear scope and Nepal-market pricing.
+                Clear services for startups that need the right solution, not extra complexity.
               </h2>
             </div>
             <div className="grid gap-3 sm:grid-cols-2">
@@ -228,7 +226,7 @@ export default function HomePage() {
             <div>
               <p className="section-heading">Selected Work</p>
               <h2 className="max-w-2xl text-3xl font-semibold leading-tight sm:text-4xl">
-                Real shipped systems, not portfolio placeholders.
+                Practical solutions used by real people.
               </h2>
             </div>
             <Link href="/projects" className="rounded-full bg-[var(--accent)] px-5 py-2 text-sm font-semibold uppercase !text-black">
@@ -262,16 +260,16 @@ export default function HomePage() {
       <section id="ai" className="border-y border-[var(--stroke)] bg-[var(--sand)]">
         <div className="mx-auto grid w-full max-w-[1180px] gap-6 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
           <div>
-            <p className="section-heading">AI Workflow</p>
+            <p className="section-heading">AI Help</p>
             <h2 className="text-3xl font-semibold leading-tight sm:text-4xl">
-              AI speeds up execution. Engineering judgment still owns the system.
+              AI can save time when it is used carefully.
             </h2>
           </div>
           <div className="grid gap-3">
             {[
-              "Use Codex, Claude, Gemini, Cursor, and Copilot for scaffolding, refactors, tests, and repetitive implementation.",
-              "Keep security, database design, auth boundaries, architecture, and production review human-owned.",
-              "Apply AI inside products where it creates real value, such as LocoXperts trail description generation.",
+              "I use tools like Codex, Claude, Gemini, Cursor, and Copilot to move faster on safe, repeated work.",
+              "Important parts like security, customer data, payments, and launch checks still get human review.",
+              "AI is useful when it solves a real problem, such as writing trail descriptions or sorting requests.",
             ].map((item) => (
               <p key={item} className="rounded-[1.5rem] border border-[var(--stroke)] bg-[var(--surface)] p-4 text-[var(--muted)]">
                 {item}
@@ -282,16 +280,16 @@ export default function HomePage() {
       </section>
 
       <section className="mx-auto w-full max-w-[1180px] px-4 py-12 text-center sm:px-6 sm:py-16 lg:px-8">
-        <h2 className="text-3xl font-semibold sm:text-4xl">Need a product engineer who can own the whole path?</h2>
+        <h2 className="text-3xl font-semibold sm:text-4xl">Have a problem that needs a clear solution?</h2>
         <p className="mx-auto mt-3 max-w-xl text-base text-[var(--muted)] sm:text-lg">
-          Bring the product constraint, target users, and timeline. I will help shape the stack,
-          delivery plan, and first production release.
+          Tell me what is not working, what you want to improve, or what you want to launch. I will
+          help turn it into a simple plan and a working product.
         </p>
         <a
           href="mailto:dibyan.softwaredev@gmail.com?subject=Product Engineering Inquiry"
           className="mt-6 inline-flex rounded-full bg-[var(--accent)] px-6 py-3 text-sm font-semibold uppercase !text-black visited:!text-black hover:!text-black focus:!text-black active:!text-black transition hover:opacity-80"
         >
-          Email Me
+          Talk About My Project
         </a>
       </section>
     </main>

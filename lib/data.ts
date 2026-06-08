@@ -42,102 +42,102 @@ export const projectsData: Project[] = [
   {
     id: 1,
     title: 'LocoXperts Full-Stack PWA',
-    description: 'A live MTB trail discovery and expert booking platform for Nepal, built solo from product design through deployment.',
+    description: 'A live platform that solves trail discovery, expert booking, event joining, and cycle hub discovery for mountain bikers in Nepal.',
     image: '/api/placeholder/400/300',
     category: 'full-stack-pwa',
     technologies: ['Next.js', 'TypeScript', 'PostgreSQL', 'Neon', 'MapLibre GL', 'Firebase OTP', 'Sentry'],
     liveUrl: 'https://locoxperts.com',
     githubUrl: '#',
     features: [
-      'Trail CRUD with GPX upload, safety labels, sport types, photos, and map visualization',
-      'Expert booking, event management, QR check-in, cancellations, and receipts',
-      'Google OAuth, Firebase phone OTP, JWT RBAC, and server-side auth guards',
-      'AI-generated trail descriptions, PWA offline support, push notifications, SEO, and observability',
+      'Clear trail pages that solve route discovery with maps, photos, safety labels, and GPX uploads',
+      'Expert booking, event pages, QR check-in, cancellations, and receipts',
+      'Secure login with Google and phone number verification',
+      'AI-written trail descriptions, offline support, notifications, SEO, and error tracking',
     ],
     performance: { score: 100, metrics: 'Solo-built production PWA' }
   },
   {
     id: 2,
     title: 'Restworld Job Map Explorer',
-    description: 'Interactive Mapbox-based job search used by a hospitality hiring platform serving 30,000+ monthly active users.',
+    description: 'A map-based job search solution for a restaurant hiring platform used by 30,000+ people each month.',
     image: '/api/placeholder/400/300',
     category: 'product-platform',
     technologies: ['Next.js', 'React', 'TypeScript', 'Mapbox', 'supercluster', 'Web Workers', 'React Query'],
     liveUrl: '#',
     githubUrl: '#',
     features: [
-      'Mapbox markers, popups, location search, and proximity filtering',
-      'Supercluster-based clustering moved into Web Workers',
-      'Debounced search and render optimizations for large result sets',
-      'Integrated across worker-facing job discovery flows',
+      'Job markers, popups, location search, and nearby job filters',
+      'Grouped map pins so large search results stayed easy to use',
+      'Faster search and smoother map loading so people could find better job matches',
+      'Added inside the worker job discovery flow',
     ],
     performance: { score: 30000, metrics: 'Monthly active users' }
   },
   {
     id: 3,
     title: 'Restworld Design System',
-    description: 'Shared UI library and design system powering multiple worker and employer applications in a Next.js monorepo.',
+    description: 'A shared UI solution that helped teams build product screens faster, cleaner, and more consistently.',
     image: '/api/placeholder/400/300',
     category: 'design-system',
     technologies: ['React', 'TypeScript', 'Storybook', 'NX', 'Lerna', 'Tailwind', 'Design Tokens'],
     liveUrl: '#',
     githubUrl: '#',
     features: [
-      'Reusable buttons, cards, forms, modals, navbars, and skeleton loaders',
-      'Design tokens and shared patterns across company apps',
-      'Storybook documentation for team onboarding',
-      'Reduced duplicated UI work across product teams',
+      'Reusable buttons, cards, forms, modals, menus, and loading screens',
+      'Shared colors, spacing, and patterns across company apps',
+      'Clear examples so new team members could use components faster',
+      'Reduced repeated design and frontend work across teams',
     ],
     performance: { score: 4775, metrics: 'Frontend commits at Restworld' }
   },
   {
     id: 4,
     title: 'Restworld Backend Services',
-    description: 'Backend API and data work in Elixir/Phoenix supporting employer management, applications, subscriptions, and analytics.',
+    description: 'Behind-the-scenes systems that solved data, employer, job application, subscription, and reporting needs.',
     image: '/api/placeholder/400/300',
     category: 'backend',
     technologies: ['Elixir', 'Phoenix', 'PostgreSQL', 'DynamoDB', 'SQL', 'REST APIs'],
     liveUrl: '#',
     githubUrl: '#',
     features: [
-      '437 backend commits across employer, job application, restaurant employee, and subscription flows',
-      'DynamoDB-backed URL shortener with pagination support',
-      'Geo-distance filtering for workers and restaurants',
-      'NULL-safe SQL refactors with joins, DISTINCT, and COALESCE handling',
+      'Built and improved employer, job application, staff, and subscription flows',
+      'Created a short-link tool with paginated results',
+      'Added distance-based filters for workers and restaurants',
+      'Cleaned up database queries so reports and lists showed correct data',
     ],
     performance: { score: 437, metrics: 'Backend commits' }
   },
   {
     id: 5,
     title: 'UXCam Analytics Visualizations',
-    description: 'Data-dense analytics dashboard work for mobile app product insights, including custom graph and heatmap systems.',
+    description: 'Dashboards and charts that helped mobile app teams find user problems and improve product flows.',
     image: '/api/placeholder/400/300',
     category: 'analytics',
     technologies: ['React', 'TypeScript', 'GraphQL', 'Elixir Phoenix', 'SVG', 'Highcharts', 'Datadog'],
     liveUrl: '#',
     githubUrl: '#',
     features: [
-      'Primary engineer on Screen Flow and Sunburst visualization components',
-      'Custom SVG funnel visualization without third-party dependency',
-      'Heatmap tooltip, browser compatibility, image map, and overlay work',
-      'Mega-filter caching and dynamic filter structures for large datasets',
+      'Built screen flow and sunburst charts for user journey analysis',
+      'Created a custom funnel chart without relying on a heavy outside library',
+      'Improved heatmaps, tooltips, browser support, image maps, and overlays',
+      'Made large filters and big data views faster to use',
     ],
     performance: { score: 250, metrics: 'Visualization file changes' }
   },
   {
     id: 6,
     title: 'AI-Assisted Engineering Workflow',
-    description: 'Practical use of AI tools to scaffold, refactor, test, and ship production systems while retaining human ownership of architecture.',
+    description: 'A careful way to use AI tools to explore options, find better solutions, and build faster without skipping review.',
     image: '/api/placeholder/400/300',
     category: 'ai-tooling',
     technologies: ['OpenAI Codex', 'Claude', 'Cursor', 'GitHub Copilot', 'Gemini', 'Testing Library'],
     liveUrl: '#',
     githubUrl: '#',
     features: [
-      'Used Codex as a systems orchestrator for scaffolding and boilerplate',
-      'Applied AI tooling to architecture exploration, test generation, and refactoring',
-      'Kept security architecture, database design, and performance decisions human-owned',
-      'Reduced repetitive implementation time while preserving production review standards',
+      'Used Codex to create first drafts and reduce repeated setup work',
+      'Used AI tools for planning, test ideas, cleanup, and safer refactors',
+      'Kept security, database, and performance decisions under human review',
+      'Saved time on repeated work without skipping production checks',
     ],
     performance: { score: 70, metrics: 'Estimated time reduction' }
   }
@@ -152,14 +152,14 @@ export const experienceData: Experience[] = [
     duration: 'Oct/2025 - Present',
     location: 'Kathmandu, Nepal',
     description:
-      'Building a community-driven MTB trail discovery platform for Nepal, covering trail maps, expert profiles, event booking, community rides, and cycle hub discovery.',
+      'Building a mountain bike trail platform for Nepal with trail maps, expert profiles, event booking, community rides, and cycle hub discovery.',
     achievements: [
-      'Sole developer across 200+ commits, designing, building, and deploying a production full-stack PWA from scratch.',
-      'Built trail management with GPX upload, safety labels, sport types, photo uploads, and map visualization using MapLibre GL, react-map-gl, and Mapbox.',
-      'Engineered event and booking workflows with creation/editing, participant management, QR code check-in, cancellation policies, and receipt generation.',
-      'Designed multi-role authentication with Google OAuth, Firebase phone OTP, JWT RBAC, and server-side auth guards.',
-      'Integrated AI model APIs for automated trail description generation with retry logic, reducing content creation time for contributors.',
-      'Managed 21+ PostgreSQL migrations via Neon, transactional emails via Resend/Nodemailer, and production observability through Sentry and Vercel Analytics.',
+      'Designed, built, and launched the product as the only developer across 200+ code changes.',
+      'Built trail pages with route uploads, safety labels, sport types, photos, and maps.',
+      'Built event and booking flows with participant lists, QR check-in, cancellations, and receipts.',
+      'Added secure login with Google, phone number verification, user roles, and protected admin areas.',
+      'Added AI support to help create trail descriptions faster for contributors.',
+      'Managed database updates, booking emails, error tracking, and product analytics.',
     ],
     technologies: [
       'Next.js',
@@ -191,14 +191,14 @@ export const experienceData: Experience[] = [
     duration: 'Jan/2023 - Aug/2025',
     location: 'Remote - EU',
     description:
-      'Led frontend delivery and contributed backend services for an AI-driven hospitality hiring platform serving 30,000+ monthly active users across Italy.',
+      'Led frontend work and helped with backend services for a restaurant hiring platform used by 30,000+ people each month across Italy.',
     achievements: [
-      'Contributed 4,775 frontend commits over 2.5 years across multiple applications and a shared component library in a Next.js/React monorepo.',
-      'Built the interactive job map explorer with Mapbox markers, popups, location search, Web Worker clustering, and debounced performance optimizations.',
-      'Architected and maintained the UI design system library with reusable components, design tokens, skeleton loaders, and Storybook documentation.',
-      'Delivered worker and employer workflows including CV upload/parsing, profile editing, Kanban candidate management, onboarding, billing, and subscriptions.',
-      'Contributed 437 backend commits in Elixir/Phoenix across employer management, job applications, restaurant employees, subscriptions, and a DynamoDB URL shortener.',
-      'Mentored 4 junior engineers through code reviews, sprint facilitation, and technical guidance.',
+      'Shipped 4,775 frontend code changes across several apps and a shared design system.',
+      'Built a job map with markers, popups, location search, grouped pins, and faster search results.',
+      'Built and maintained reusable UI pieces like buttons, forms, cards, loading screens, and documentation.',
+      'Built worker and employer tools for CV upload, profile editing, candidate tracking, onboarding, billing, and subscriptions.',
+      'Helped improve backend services for employers, job applications, staff records, subscriptions, and short links.',
+      'Mentored 4 junior engineers through code reviews, sprint planning, and day-to-day guidance.',
     ],
     technologies: [
       'Next.js',
@@ -233,14 +233,14 @@ export const experienceData: Experience[] = [
     duration: 'Jan/2019 - Dec/2022',
     location: 'Kathmandu, Nepal',
     description:
-      'Built and maintained responsive, data-dense SaaS analytics dashboards for mobile app product insights.',
+      'Built dashboards that helped mobile app teams see how users moved through their apps and where they got stuck.',
     achievements: [
-      'Primary engineer on Screen Flow and Sunburst visualization components, spanning 250+ file changes across graph-based SVG analytics systems.',
-      'Enhanced heatmap functionality with tooltip positioning, Chrome/Safari fixes, image map overlays, and interactive data overlays.',
-      'Engineered a custom SVG-based funnel visualization tool from scratch, eliminating third-party library dependency.',
-      'Designed a custom caching algorithm for the mega-filter dropdown to improve render performance under large, multi-dimensional datasets.',
-      'Built dynamic filter data structures with GraphQL and Elixir Phoenix integration, including timezone-aware analytics filtering.',
-      'Integrated observability and analytics tools including Datadog and Hotjar while maintaining build stability across the codebase.',
+      'Built screen flow and sunburst charts across 250+ file changes.',
+      'Improved heatmaps, tooltips, browser support, image overlays, and interactive data views.',
+      'Built a custom funnel chart from scratch and removed the need for an outside chart library.',
+      'Made large filter dropdowns faster and easier to use.',
+      'Built flexible filters connected to backend data, including timezone-aware reporting.',
+      'Added monitoring and analytics tools while keeping the app stable.',
     ],
     technologies: [
       'React',
@@ -265,9 +265,9 @@ export const blogsData: Blog[] = [
   {
     id: 1,
     slug: 'nextjs-16-cache-components-production-notes',
-    title: 'Next.js 16 Cache Components: What I Would Use in Production',
-    excerpt: 'A practical read on Cache Components, Turbopack, and adapter maturity from the perspective of shipping real product systems.',
-    content: `# Next.js 16 Cache Components: What I Would Use in Production
+    title: 'Why Product Speed Matters When Solving Startup Problems',
+    excerpt: 'A simple guide to making products faster, safer, and easier to trust when customers need answers quickly.',
+    content: `# Why Product Speed Matters When Solving Startup Problems
 
 Next.js 16 is not just another framework bump. The important shift is that caching becomes more explicit, Turbopack is now the default path, and deployment adapters are maturing beyond a single hosting story.
 
@@ -306,9 +306,9 @@ Next.js 16 rewards teams that already have discipline around data ownership. The
   {
     id: 2,
     slug: 'react-19-2-activity-view-transitions',
-    title: 'React 19.2: Activity, View Transitions, and the Return of UI State',
-    excerpt: 'React 19.2 makes hidden UI, resumed screens, and smoother transitions more practical for real apps.',
-    content: `# React 19.2: Activity, View Transitions, and the Return of UI State
+    title: 'Keeping Web Apps Easy to Use',
+    excerpt: 'Why smooth screens, saved filters, and simple movement through an app matter for real customers.',
+    content: `# Keeping Web Apps Easy to Use
 
 React 19.2 is interesting because it focuses on how users actually move through interfaces. A lot of product work is not about rendering the first screen; it is about preserving context while users move between tabs, filters, panels, and routes.
 
@@ -347,9 +347,9 @@ React 19.2 is a reminder that performance is not only milliseconds. Preserving u
   {
     id: 3,
     slug: 'coding-agents-are-team-mates-not-autopilot',
-    title: 'Coding Agents Are Teammates, Not Autopilot',
-    excerpt: 'Codex, Claude, Gemini, Cursor, and Copilot are useful when the engineer owns architecture, review, tests, and blast radius.',
-    content: `# Coding Agents Are Teammates, Not Autopilot
+    title: 'How AI Coding Tools Help Build Faster',
+    excerpt: 'Codex, Claude, Gemini, Cursor, and Copilot can save time, but important decisions still need human review.',
+    content: `# How AI Coding Tools Help Build Faster
 
 The coding-agent trend is real. Codex, Claude, Gemini, Cursor, and Copilot have moved from autocomplete into planning, refactoring, test generation, and multi-file edits.
 
@@ -389,9 +389,9 @@ That is the difference between vibe coding and AI-assisted engineering.`,
   {
     id: 4,
     slug: 'mcp-for-product-engineers',
-    title: 'MCP for Product Engineers: Useful, Powerful, and Easy to Misuse',
-    excerpt: 'Model Context Protocol is becoming a common bridge between AI tools and real systems, but it deserves serious security discipline.',
-    content: `# MCP for Product Engineers: Useful, Powerful, and Easy to Misuse
+    title: 'Connecting AI Tools Safely to Business Data',
+    excerpt: 'AI tools become more useful when they can read the right information, but access must be limited and reviewed.',
+    content: `# Connecting AI Tools Safely to Business Data
 
 Model Context Protocol is becoming a common way for AI tools to talk to files, APIs, databases, browsers, and internal systems.
 
@@ -430,9 +430,9 @@ MCP is one of the more important ideas in AI-assisted development because it sta
   {
     id: 5,
     slug: 'building-map-first-pwas-in-nepal',
-    title: 'Building Map-First PWAs: Notes from LocoXperts',
-    excerpt: 'Lessons from building a trail discovery PWA with GPX uploads, maps, bookings, offline support, and local constraints.',
-    content: `# Building Map-First PWAs: Notes from LocoXperts
+    title: 'What I Learned Building a Map App for Nepal',
+    excerpt: 'Lessons from building a trail app with maps, bookings, offline support, safety labels, and local needs.',
+    content: `# What I Learned Building a Map App for Nepal
 
 A map-first PWA is different from a normal CRUD app. The map is not decoration; it is the interface. For LocoXperts, that means trail discovery, GPX data, expert profiles, event locations, and cycle hubs all need to feel connected.
 
@@ -467,9 +467,9 @@ The hard part of a map-first PWA is not placing pins. It is making location, ide
   {
     id: 6,
     slug: 'observability-for-solo-founders',
-    title: 'Observability for Solo Founders: What I Actually Wire Up',
-    excerpt: 'A practical stack for production confidence when one engineer owns frontend, backend, database, and deployment.',
-    content: `# Observability for Solo Founders: What I Actually Wire Up
+    title: 'Simple Product Monitoring for Startup Founders',
+    excerpt: 'What to track so you know when your product has errors, slow pages, or broken customer flows.',
+    content: `# Simple Product Monitoring for Startup Founders
 
 When one engineer owns the whole product, observability is not optional. It is how you sleep after deploying.
 
@@ -510,9 +510,9 @@ Observability is a product feature for a solo founder. It shortens the distance 
   {
     id: 7,
     slug: 'auth-rbac-lessons-from-locoxperts',
-    title: 'Auth and RBAC Lessons from Building LocoXperts',
-    excerpt: 'What changes when one product needs admins, experts, participants, Google OAuth, phone OTP, and server-side guards.',
-    content: `# Auth and RBAC Lessons from Building LocoXperts
+    title: 'Login, Roles, and Admin Access Explained Simply',
+    excerpt: 'A simple explanation of secure login, admin access, and user roles for a real business product.',
+    content: `# Login, Roles, and Admin Access Explained Simply
 
 Authentication looks simple until the product has real roles. LocoXperts needs admins, experts, participants, review workflows, booking flows, and protected admin actions.
 
@@ -555,9 +555,9 @@ Good auth design is boring in the best way. Users should not notice it, contribu
   {
     id: 8,
     slug: 'design-systems-without-theatre',
-    title: 'Design Systems Without Theatre',
-    excerpt: 'A practical take on building component libraries that actually help teams ship instead of becoming a parallel product.',
-    content: `# Design Systems Without Theatre
+    title: 'Design Systems in Plain English',
+    excerpt: 'How reusable buttons, forms, layouts, and rules help teams build cleaner products faster.',
+    content: `# Design Systems in Plain English
 
 Design systems fail when they become theatre: polished demos, huge naming debates, and components nobody uses in production.
 
@@ -598,9 +598,9 @@ A good design system is infrastructure. It should make the correct UI easier to 
   {
     id: 9,
     slug: 'elixir-phoenix-for-frontend-engineers',
-    title: 'Elixir/Phoenix Notes for Frontend Engineers',
-    excerpt: 'What frontend-heavy engineers learn when they start owning API behavior, SQL shape, and backend delivery.',
-    content: `# Elixir/Phoenix Notes for Frontend Engineers
+    title: 'Why Backend Work Matters for Your Product',
+    excerpt: 'The hidden parts of a product decide whether forms, logins, reports, payments, and dashboards work well.',
+    content: `# Why Backend Work Matters for Your Product
 
 Frontend engineers become more effective when they understand the backend shape behind the UI.
 
@@ -635,9 +635,9 @@ Frontend specialists do not need to become backend-only engineers. But learning 
   {
     id: 10,
     slug: 'performance-budgets-for-map-and-dashboard-apps',
-    title: 'Performance Budgets for Maps and Dashboards',
-    excerpt: 'Maps, filters, charts, and image-heavy screens need different performance budgets than normal content pages.',
-    content: `# Performance Budgets for Maps and Dashboards
+    title: 'Keeping Maps and Dashboards Fast',
+    excerpt: 'Maps, filters, charts, and image-heavy screens need clear speed limits so users do not get stuck waiting.',
+    content: `# Keeping Maps and Dashboards Fast
 
 Maps and dashboards fail differently than marketing pages. They often load more JavaScript, fetch more data, render more dynamic UI, and respond to more user input.
 
