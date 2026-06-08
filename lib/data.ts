@@ -260,450 +260,251 @@ export const experienceData: Experience[] = [
   },
 ];
 
-// Sample blogs data
+// Current portfolio writing
 export const blogsData: Blog[] = [
   {
     id: 1,
-    slug: 'building-scalable-nextjs-applications',
-    title: 'Building Scalable Next.js Applications',
-    excerpt: 'Learn how to architect and build scalable Next.js applications that can handle growth and maintain performance.',
-    content: `# Building Scalable Next.js Applications
+    slug: 'nextjs-16-cache-components-production-notes',
+    title: 'Next.js 16 Cache Components: What I Would Use in Production',
+    excerpt: 'A practical read on Cache Components, Turbopack, and adapter maturity from the perspective of shipping real product systems.',
+    content: `# Next.js 16 Cache Components: What I Would Use in Production
 
-Building scalable Next.js applications requires careful consideration of architecture, performance, and developer experience. In this blog post, we'll explore key strategies for creating applications that can grow with your needs.
+Next.js 16 is not just another framework bump. The important shift is that caching becomes more explicit, Turbopack is now the default path, and deployment adapters are maturing beyond a single hosting story.
 
-## Architecture Patterns
+For product teams, the question is not "what is new?" It is "what should we trust in production?"
 
-### Server Components First
-Next.js 13+ introduced Server Components, which allow you to reduce client-side JavaScript and improve performance. Always start with Server Components and only use Client Components when necessary.
+## Cache Components
 
-### Code Splitting
-Leverage Next.js automatic code splitting. Organize your code so that components are loaded only when needed, reducing initial bundle size.
+Cache Components are useful when a route mixes stable and dynamic work. A product page, listing page, dashboard shell, or public profile often has pieces that can be cached differently.
 
-### Database Optimization
-Use connection pooling, implement proper indexing, and consider using read replicas for scaling read operations.
+My rule is simple: cache the parts that are naturally stable, keep user-specific data close to runtime, and make invalidation visible in code review.
 
-## Performance Best Practices
+## Turbopack
 
-- Use Static Generation (SSG) where possible
-- Implement Incremental Static Regeneration (ISR) for dynamic content
-- Optimize images with next/image
-- Implement proper caching strategies
+Turbopack becoming the default matters because local feedback loops are part of delivery speed. Faster builds are useful, but only when the team also watches for compatibility issues in CSS, PostCSS, test tooling, and deployment pipelines.
 
-## Conclusion
+## Adapter Maturity
 
-Building scalable applications is an ongoing process. Start with these patterns and iterate based on your specific needs.`,
+The stable adapter direction matters for teams that do not want every Next.js deployment decision tied to one platform. I still prefer starting with the boring path, then moving to adapters when platform constraints justify it.
+
+## Production Checklist
+
+- Treat caching as application logic, not framework magic
+- Keep route boundaries simple before adding clever caching
+- Test dynamic data and auth flows after every cache change
+- Watch build and dev-server behavior after Turbopack upgrades
+- Document revalidation strategy next to the feature
+
+## My Take
+
+Next.js 16 rewards teams that already have discipline around data ownership. The feature set is strong, but the win comes from explicit boundaries: what is cached, what is dynamic, and what must never leak between users.`,
     author: 'Dibyan Maharjan',
-    publishedAt: '2024-01-15',
-    tags: ['Next.js', 'Architecture', 'Performance'],
+    publishedAt: '2026-06-08',
+    tags: ['Next.js 16', 'Caching', 'Performance'],
     readTime: 5
   },
   {
     id: 2,
-    slug: 'modern-react-patterns-2024',
-    title: 'Modern React Patterns for 2024',
-    excerpt: 'Exploring the latest React patterns and best practices that will help you write more maintainable and performant code.',
-    content: `# Modern React Patterns for 2024
+    slug: 'react-19-2-activity-view-transitions',
+    title: 'React 19.2: Activity, View Transitions, and the Return of UI State',
+    excerpt: 'React 19.2 makes hidden UI, resumed screens, and smoother transitions more practical for real apps.',
+    content: `# React 19.2: Activity, View Transitions, and the Return of UI State
 
-React has evolved significantly over the years. Here are the modern patterns you should be using in 2024.
+React 19.2 is interesting because it focuses on how users actually move through interfaces. A lot of product work is not about rendering the first screen; it is about preserving context while users move between tabs, filters, panels, and routes.
 
-## Custom Hooks
+## Activity
 
-Custom hooks allow you to extract component logic into reusable functions. They're essential for keeping components clean and logic reusable.
+The Activity API gives React a way to keep parts of the UI mounted while hidden. That matters for dashboards, booking flows, admin panels, and map-heavy interfaces where throwing away state creates friction.
 
-## Context and State Management
+I would reach for it when a user expects to return to the same local state: selected filters, expanded rows, map position, partially completed forms, or panel state.
 
-While Redux still has its place, modern React applications often use Context API for simpler state management needs. Consider Zustand or Jotai for more complex scenarios.
+## View Transitions
 
-## Server Components
+View transitions are not about decoration. They help users understand continuity. A detail page opening from a list, a route changing inside a dashboard, or a panel expanding into focus can all benefit when motion explains what changed.
 
-If you're using Next.js 13+, Server Components are game-changing. They allow you to fetch data directly in components without useEffect.
+The danger is overuse. Motion should reduce cognitive load, not become a personality trait.
 
-## Conclusion
+## cacheSignal
 
-Stay updated with React's latest features and patterns. The ecosystem moves fast, and adopting modern patterns will make your code more maintainable.`,
+React's cacheSignal improves cancellation around cached async work. In production, that means fewer wasted requests and better control when screens change quickly.
+
+## Where I Would Use It
+
+- Analytics dashboards with persistent filters
+- Multi-step booking flows
+- Map search interfaces with expensive state
+- Admin views with drawers, tabs, and detail panels
+- Product UIs where route changes should feel spatial
+
+## My Take
+
+React 19.2 is a reminder that performance is not only milliseconds. Preserving user context is performance too.`,
     author: 'Dibyan Maharjan',
-    publishedAt: '2024-02-10',
-    tags: ['React', 'Patterns', 'Best Practices'],
+    publishedAt: '2026-06-08',
+    tags: ['React 19.2', 'UX', 'Frontend'],
     readTime: 4
   },
   {
     id: 3,
-    slug: 'optimizing-web-performance',
-    title: 'Optimizing Web Performance: A Complete Guide',
-    excerpt: 'A comprehensive guide to optimizing web performance, covering everything from Core Web Vitals to advanced caching strategies.',
-    content: `# Optimizing Web Performance: A Complete Guide
+    slug: 'coding-agents-are-team-mates-not-autopilot',
+    title: 'Coding Agents Are Teammates, Not Autopilot',
+    excerpt: 'Codex, Claude, Gemini, Cursor, and Copilot are useful when the engineer owns architecture, review, tests, and blast radius.',
+    content: `# Coding Agents Are Teammates, Not Autopilot
 
-Web performance directly impacts user experience and business metrics. Here's how to optimize your web applications.
+The coding-agent trend is real. Codex, Claude, Gemini, Cursor, and Copilot have moved from autocomplete into planning, refactoring, test generation, and multi-file edits.
 
-## Core Web Vitals
+That does not remove engineering responsibility. It changes where the engineer spends attention.
 
-### Largest Contentful Paint (LCP)
-LCP measures loading performance. Aim for LCP under 2.5 seconds.
+## What Agents Are Good At
 
-### First Input Delay (FID)
-FID measures interactivity. Target FID under 100 milliseconds.
+Agents are strong at repetitive implementation work: scaffolding routes, writing boilerplate tests, converting a known pattern across files, explaining unknown code, and proposing migration steps.
 
-### Cumulative Layout Shift (CLS)
-CLS measures visual stability. Keep CLS under 0.1.
+They are also useful as a second set of eyes before a code review, especially for edge cases and missing tests.
 
-## Optimization Techniques
+## What They Should Not Own
 
-### Image Optimization
-- Use modern formats (WebP, AVIF)
-- Implement lazy loading
-- Serve responsive images
+I do not let an agent own security boundaries, auth design, database migrations, production observability, or product tradeoffs without human review.
 
-### Code Optimization
-- Minify JavaScript and CSS
-- Remove unused code
-- Use code splitting
+The highest-risk failures are confident and quiet: leaking data between tenants, over-broad permissions, broken cache assumptions, and migrations that work locally but fail against production data.
 
-### Caching Strategies
-- Browser caching
-- CDN caching
-- API response caching
+## My Workflow
 
-## Conclusion
+- Give the agent a narrow task and the files it needs
+- Ask for the plan before the edit when risk is high
+- Review diffs like a teammate submitted them
+- Run tests and build locally
+- Add manual checks for auth, billing, data, and side effects
+- Keep architecture decisions explicit in the codebase
 
-Performance optimization is an ongoing process. Monitor your metrics regularly and iterate on improvements.`,
+## The Real Productivity Gain
+
+The gain is not that AI writes everything. The gain is that an experienced engineer can spend less time on blank-page work and more time on architecture, integration, security, and product fit.
+
+That is the difference between vibe coding and AI-assisted engineering.`,
     author: 'Dibyan Maharjan',
-    publishedAt: '2024-03-05',
-    tags: ['Performance', 'Web Vitals', 'Optimization'],
-    readTime: 7
+    publishedAt: '2026-06-07',
+    tags: ['AI Agents', 'Codex', 'Engineering'],
+    readTime: 5
   },
   {
     id: 4,
-    slug: 'typescript-best-practices',
-    title: 'TypeScript Best Practices for Frontend Development',
-    excerpt: 'Master TypeScript in frontend development with these essential best practices and patterns.',
-    content: `# TypeScript Best Practices for Frontend Development
+    slug: 'mcp-for-product-engineers',
+    title: 'MCP for Product Engineers: Useful, Powerful, and Easy to Misuse',
+    excerpt: 'Model Context Protocol is becoming a common bridge between AI tools and real systems, but it deserves serious security discipline.',
+    content: `# MCP for Product Engineers: Useful, Powerful, and Easy to Misuse
 
-TypeScript has become the standard for modern frontend development. Here are the best practices you should follow.
+Model Context Protocol is becoming a common way for AI tools to talk to files, APIs, databases, browsers, and internal systems.
 
-## Type Safety
+The idea is simple: instead of every tool inventing its own integration format, MCP gives agents a structured way to discover tools and resources.
 
-### Strict Mode
-Always enable strict mode in tsconfig.json. It catches many errors at compile time.
+## Why Engineers Care
 
-### Avoid 'any'
-Minimize the use of 'any' type. Use 'unknown' or proper types instead.
+For product teams, MCP can make AI assistants more useful. A coding agent can inspect project docs, query local data, call test utilities, or work with design references through a shared protocol.
 
-## Type Definitions
+That is powerful because it moves the agent closer to the actual system.
 
-### Interface vs Type
-Use interfaces for object shapes that might be extended. Use types for unions, intersections, and computed types.
+## Why Security Matters
 
-### Utility Types
-Leverage TypeScript utility types like Partial, Pick, Omit, and Record to create new types from existing ones.
+Any bridge between an AI agent and real tools is also a bridge to mistakes. A server that can read files, execute commands, or call internal APIs needs boundaries.
 
-## Code Organization
+I would treat MCP servers like production integrations: explicit permissions, minimal scope, logging, review, and a clear owner.
 
-### Type Organization
-Keep types close to where they're used, or create a types directory for shared types.
+## A Practical Checklist
 
-## Conclusion
+- Prefer read-only tools by default
+- Scope file and API access tightly
+- Avoid exposing secrets or production credentials
+- Log tool calls during development
+- Make destructive actions require confirmation
+- Keep server dependencies updated
+- Treat prompts and tool outputs as untrusted input
 
-TypeScript is a powerful tool when used correctly. These practices will help you write more maintainable and error-free code.`,
+## My Take
+
+MCP is one of the more important ideas in AI-assisted development because it standardizes context. But useful context needs guardrails. The best integrations are boring, explicit, and auditable.`,
     author: 'Dibyan Maharjan',
-    publishedAt: '2024-03-20',
-    tags: ['TypeScript', 'Best Practices', 'Frontend'],
-    readTime: 6
+    publishedAt: '2026-06-07',
+    tags: ['MCP', 'AI Tooling', 'Security'],
+    readTime: 5
   },
   {
     id: 5,
-    slug: 'micro-frontends-architecture',
-    title: 'Micro Frontends: Architecture and Implementation',
-    excerpt: 'Understanding micro frontends architecture and how to implement it in your projects.',
-    content: `# Micro Frontends: Architecture and Implementation
+    slug: 'building-map-first-pwas-in-nepal',
+    title: 'Building Map-First PWAs: Notes from LocoXperts',
+    excerpt: 'Lessons from building a trail discovery PWA with GPX uploads, maps, bookings, offline support, and local constraints.',
+    content: `# Building Map-First PWAs: Notes from LocoXperts
 
-Micro frontends enable teams to work independently on different parts of an application. Here's how to implement this architecture.
+A map-first PWA is different from a normal CRUD app. The map is not decoration; it is the interface. For LocoXperts, that means trail discovery, GPX data, expert profiles, event locations, and cycle hubs all need to feel connected.
 
-## What are Micro Frontends?
+## Start with Data Shape
 
-Micro frontends extend the microservices concept to the frontend. Each micro frontend is independently developed, tested, and deployed.
+GPX uploads, trail metadata, safety labels, sport types, photos, and coordinates need a stable model before the UI gets fancy.
 
-## Implementation Strategies
+If the data model is weak, every map feature becomes a special case.
 
-### Module Federation
-Webpack 5's Module Federation allows sharing code between applications at runtime. This is one of the most popular approaches.
+## Maps Need Performance Discipline
 
-### Build-time Integration
-Combine micro frontends at build time. Simpler but less flexible than runtime integration.
+Map screens can degrade quickly: too many markers, heavy popups, unbounded image payloads, and expensive client-side filtering.
 
-### Runtime Integration
-Load micro frontends at runtime using JavaScript. More flexible but requires careful orchestration.
+I prefer debounced interactions, bounded result sets, clustering where needed, and careful separation between map state and server state.
 
-## Benefits
+## Offline Is a Product Feature
 
-- Team autonomy
-- Independent deployments
-- Technology diversity
-- Scalability
+For outdoor and trail products, weak connectivity is normal. PWA support, service workers, and resilient loading states are part of the product, not extras.
 
-## Challenges
+## Trust and Safety
 
-- Shared state management
-- Styling conflicts
-- Performance overhead
-- Testing complexity
+Trail platforms need moderation, admin review, expert verification, and clear safety labeling. The technical work is tied directly to community trust.
 
-## Conclusion
+## My Take
 
-Micro frontends are powerful but require careful planning. Start simple and evolve your architecture as needed.`,
+The hard part of a map-first PWA is not placing pins. It is making location, identity, safety, performance, and offline behavior work together under real-world constraints.`,
     author: 'Dibyan Maharjan',
-    publishedAt: '2024-04-12',
-    tags: ['Architecture', 'Micro Frontends', 'Webpack'],
-    readTime: 8
+    publishedAt: '2026-06-06',
+    tags: ['PWA', 'Maps', 'LocoXperts'],
+    readTime: 5
   },
   {
     id: 6,
-    slug: 'tailwind-css-advanced-techniques',
-    title: 'Tailwind CSS: Advanced Techniques and Patterns',
-    excerpt: 'Master Tailwind CSS with advanced techniques, patterns, and customization strategies.',
-    content: `# Tailwind CSS: Advanced Techniques and Patterns
+    slug: 'observability-for-solo-founders',
+    title: 'Observability for Solo Founders: What I Actually Wire Up',
+    excerpt: 'A practical stack for production confidence when one engineer owns frontend, backend, database, and deployment.',
+    content: `# Observability for Solo Founders: What I Actually Wire Up
 
-Tailwind CSS has revolutionized how we write CSS. Let's explore advanced techniques to get the most out of it.
+When one engineer owns the whole product, observability is not optional. It is how you sleep after deploying.
 
-## Customization
+For LocoXperts-style products, I care about four things: errors, user flows, performance, and operational signals.
 
-### Theme Configuration
-Extend the default theme in tailwind.config.js to match your design system.
+## Error Tracking
 
-### Custom Plugins
-Create custom plugins for reusable component patterns.
+Sentry or a similar tool should be wired early. Frontend errors, API route failures, and unexpected auth issues need to be visible without waiting for a user to complain.
 
-## Advanced Patterns
+## Product Analytics
 
-### Component Abstraction
-Create component abstractions using @apply for commonly used patterns.
+Analytics should answer product questions, not just produce charts. Are users finding trails? Are bookings being started and completed? Where do contributors drop off while adding content?
 
-### Responsive Design
-Leverage Tailwind's responsive utilities for mobile-first design.
+## Email and Background Flows
+
+Transactional email is part of the system. Booking receipts, admin review messages, verification updates, and failure paths should be logged and testable.
 
 ## Performance
 
-### Purge Configuration
-Configure content paths correctly to ensure unused styles are purged.
+Core Web Vitals still matter, but so do product-specific metrics: map load time, search latency, image weight, and slow API routes.
 
-### JIT Mode
-Use JIT mode for faster builds and better performance in development.
+## My Baseline Stack
 
-## Best Practices
+- Sentry for application errors
+- Vercel Analytics or similar for page and performance visibility
+- Structured logs around auth, bookings, uploads, and emails
+- Database migration discipline
+- Manual smoke tests for critical flows after deploys
 
-- Use semantic class names
-- Leverage composition over repetition
-- Keep utilities close to elements
-- Use design tokens
+## My Take
 
-## Conclusion
-
-Tailwind CSS is powerful when used correctly. These advanced techniques will help you build better designs faster.`,
+Observability is a product feature for a solo founder. It shortens the distance between something breaking and knowing exactly where to look.`,
     author: 'Dibyan Maharjan',
-    publishedAt: '2024-05-01',
-    tags: ['Tailwind CSS', 'CSS', 'Design'],
-    readTime: 5
-  },
-  {
-    id: 7,
-    slug: 'state-management-comparison',
-    title: 'State Management in React: A Complete Comparison',
-    excerpt: 'Comparing different state management solutions for React applications.',
-    content: `# State Management in React: A Complete Comparison
-
-Choosing the right state management solution is crucial for React applications. Let's compare the options.
-
-## Built-in Solutions
-
-### useState and useReducer
-Perfect for local component state. Use for simple state that doesn't need to be shared.
-
-### Context API
-Good for sharing state across components without prop drilling. Best for infrequently changing data.
-
-## Third-party Libraries
-
-### Redux
-Most popular and battle-tested. Great for complex applications but requires boilerplate.
-
-### Zustand
-Lightweight and simple. Great alternative to Redux with less boilerplate.
-
-### Jotai
-Atomic state management. Very flexible and performant.
-
-### Recoil
-Facebook's solution for complex state management. Good for large teams.
-
-## When to Use What
-
-- Local state: useState
-- Shared UI state: Context API
-- Server state: React Query or SWR
-- Complex global state: Redux, Zustand, or Jotai
-
-## Conclusion
-
-Choose based on your needs. Start simple and upgrade when necessary.`,
-    author: 'Dibyan Maharjan',
-    publishedAt: '2024-05-18',
-    tags: ['React', 'State Management', 'Redux'],
-    readTime: 6
-  },
-  {
-    id: 8,
-    slug: 'testing-react-applications',
-    title: 'Testing React Applications: Best Practices',
-    excerpt: 'Learn how to effectively test React applications with modern tools and practices.',
-    content: `# Testing React Applications: Best Practices
-
-Testing is crucial for maintaining quality in React applications. Here's how to do it effectively.
-
-## Testing Tools
-
-### Jest
-JavaScript testing framework. Great for unit and integration tests.
-
-### React Testing Library
-Simple and complete testing utilities for React. Encourages best practices.
-
-### Playwright
-End-to-end testing framework. Great for testing user flows.
-
-## Testing Strategies
-
-### Unit Tests
-Test individual functions and utilities in isolation.
-
-### Component Tests
-Test React components in isolation with React Testing Library.
-
-### Integration Tests
-Test how components work together.
-
-### E2E Tests
-Test complete user flows from start to finish.
-
-## Best Practices
-
-- Test user behavior, not implementation
-- Keep tests simple and focused
-- Use test-driven development when appropriate
-- Maintain good test coverage
-
-## Conclusion
-
-Good testing practices lead to more maintainable and reliable applications. Invest time in setting up proper testing infrastructure.`,
-    author: 'Dibyan Maharjan',
-    publishedAt: '2024-06-05',
-    tags: ['Testing', 'React', 'Jest'],
-    readTime: 7
-  },
-  {
-    id: 9,
-    slug: 'ci-cd-nextjs-projects',
-    title: 'CI/CD for Next.js Projects: Setup and Best Practices',
-    excerpt: 'Setting up continuous integration and deployment for Next.js applications.',
-    content: `# CI/CD for Next.js Projects: Setup and Best Practices
-
-Automating your deployment pipeline saves time and reduces errors. Here's how to set up CI/CD for Next.js.
-
-## Why CI/CD?
-
-- Automatic testing
-- Consistent deployments
-- Faster release cycles
-- Reduced manual errors
-
-## Setup Options
-
-### Vercel
-Vercel provides excellent Next.js support with automatic deployments from Git.
-
-### GitHub Actions
-Flexible and powerful CI/CD solution. Great for custom workflows.
-
-### GitLab CI
-Integrated CI/CD in GitLab. Good alternative to GitHub Actions.
-
-## Best Practices
-
-### Automated Testing
-Run tests on every commit to catch issues early.
-
-### Preview Deployments
-Deploy preview environments for pull requests.
-
-### Staging Environment
-Maintain a staging environment that mirrors production.
-
-### Production Deployments
-Use manual approval gates for production deployments.
-
-## Conclusion
-
-CI/CD is essential for modern development workflows. Set it up early and iterate on your process.`,
-    author: 'Dibyan Maharjan',
-    publishedAt: '2024-06-22',
-    tags: ['CI/CD', 'Next.js', 'DevOps'],
-    readTime: 5
-  },
-  {
-    id: 10,
-    slug: 'accessibility-web-applications',
-    title: 'Accessibility in Web Applications: A Developer\'s Guide',
-    excerpt: 'Making web applications accessible to all users is not just ethical, it\'s good business.',
-    content: `# Accessibility in Web Applications: A Developer's Guide
-
-Accessibility ensures your applications are usable by everyone, regardless of their abilities.
-
-## Why Accessibility Matters
-
-- Legal compliance (WCAG)
-- Broader user base
-- Better SEO
-- Improved UX for all users
-
-## Key Principles
-
-### Perceivable
-Information must be presentable to users in ways they can perceive.
-
-### Operable
-Interface components must be operable by all users.
-
-### Understandable
-Information and UI operation must be understandable.
-
-### Robust
-Content must be robust enough for various assistive technologies.
-
-## Implementation
-
-### Semantic HTML
-Use proper HTML elements for their intended purpose.
-
-### ARIA Labels
-Use ARIA attributes when HTML isn't sufficient.
-
-### Keyboard Navigation
-Ensure all functionality is accessible via keyboard.
-
-### Screen Reader Support
-Test with screen readers and ensure proper announcements.
-
-## Testing Tools
-
-- axe DevTools
-- WAVE
-- Lighthouse
-- Manual testing
-
-## Conclusion
-
-Accessibility should be built in from the start, not added as an afterthought. Make it part of your development process.`,
-    author: 'Dibyan Maharjan',
-    publishedAt: '2024-07-10',
-    tags: ['Accessibility', 'WCAG', 'Inclusive Design'],
-    readTime: 6
+    publishedAt: '2026-06-06',
+    tags: ['Observability', 'Founder', 'DevOps'],
+    readTime: 4
   }
 ];

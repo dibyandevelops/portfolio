@@ -18,9 +18,9 @@ export default async function BlogsPage({ searchParams }: BlogsPageProps) {
       <section className="section-shell space-y-12">
         <header className="space-y-3">
           <p className="section-heading">Writing</p>
-          <h1 className="text-4xl font-semibold tracking-tight">Notes on process, systems, and craft.</h1>
+          <h1 className="text-4xl font-semibold tracking-tight">Notes on modern product engineering.</h1>
           <p className="text-[var(--muted)]">
-            Field guides for design systems, performance, state management, and helping teams keep momentum.
+            Current field notes on Next.js, React, AI coding agents, MCP, map-first PWAs, and observability.
           </p>
         </header>
 
@@ -64,4 +64,3 @@ export default async function BlogsPage({ searchParams }: BlogsPageProps) {
     </main>
   );
 }
-
